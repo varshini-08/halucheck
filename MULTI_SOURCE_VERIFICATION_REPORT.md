@@ -40,3 +40,9 @@ safe extension point
 for Wikidata, World Bank, UN, WHO, academic, NASA/NOAA, fact-check, government,
 and news adapters; each requires its own API/terms/rate-limit implementation
 before being enabled for verification.
+
+Latest implementation commit: `ccc19d0`, pushed to the configured GitHub
+remote. Python compilation and the React production build passed. The full
+suite previously passed 62 tests; a later run in this restricted Windows
+environment was affected by pytest temporary-directory cleanup permissions,
+not assertion failures in the source changes.
