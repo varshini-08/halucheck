@@ -1,0 +1,12 @@
+{
+  "environment": {"status": "PASS", "python": "3.13.12", "fastapi": "0.141.1", "uvicorn": "0.51.0", "node": "22.17.0", "npm": "10.9.2", "faiss": "available", "env_ignored": true},
+  "backend": {"status": "PASS", "entrypoint": "api.main:app", "port": 8000},
+  "frontend": {"status": "PASS", "vite_port": 5173, "build": "PASS", "http_startup": "PASS"},
+  "endpoints": {"/api/health": 200, "/api/config": 200, "/api/settings": 200, "/api/history": 200, "/api/sources": 200, "/api/sources/status": 200, "/api/dashboard": 200, "/docs": 200},
+  "source_adapters": {"wikidata": "IMPLEMENTED_NOT_LIVE_TESTED", "world_bank": "IMPLEMENTED_NOT_LIVE_TESTED", "pubmed": "IMPLEMENTED_NOT_LIVE_TESTED", "crossref": "IMPLEMENTED_NOT_LIVE_TESTED", "openalex": "IMPLEMENTED_NOT_LIVE_TESTED", "google_factcheck": "NOT_CONFIGURED", "government": "UNAVAILABLE", "un_data": "UNAVAILABLE", "who": "UNAVAILABLE", "nasa": "NOT_CONFIGURED", "noaa": "NOT_CONFIGURED", "britannica": "REQUIRES_LICENSE", "news": "REQUIRES_LEGITIMATE_API_ACCESS"},
+  "tests": {"status": "PASS", "count": 68, "warnings": 3},
+  "security": {"status": "PASS", "env_ignored": true, "frontend_secrets": false, "node_modules_tracked": false},
+  "real_analysis": "NOT_TESTED_IN_THIS_VALIDATION_RUN",
+  "browser_visual": "NOT_TESTED_AUTOMATION_NOT_AVAILABLE",
+  "limitations": ["External adapter live calls depend on network/API terms and were not used to fabricate analysis results.", "Government, UN, WHO, NASA, NOAA, Britannica, and Reuters/AP remain unavailable or credential/licensing dependent.", "React history UI browser interaction requires manual verification."]
+}
