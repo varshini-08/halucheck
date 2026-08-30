@@ -1,0 +1,11 @@
+{
+  "python_compile": "PASS",
+  "focused_tests": {"passed": 21, "skipped": 0, "failed": 0},
+  "historical_full_suite": {"passed": 70, "skipped": 1},
+  "frontend_build": "PASS",
+  "api_smoke": "PASS",
+  "live_groq_analysis": {"status": 200, "claims": 4, "processing_seconds": 18.39},
+  "security": "PASS",
+  "browser_manual": "NOT_RUN",
+  "gemini_live": "NOT_RUN"
+}

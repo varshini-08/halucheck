@@ -1,10 +1,17 @@
-﻿# Final Project Status
+# Final Project Status
 
-Phase 1–3 production pipeline is implemented and tested. Phase 4 benchmark,
-metrics, reports, comparative runner, optional GTR preflight, and opt-in baseline
-adapters are implemented. Full paper reproduction remains partial where the
-paper does not publish exact algorithms or required response samples.
+## Completed
 
-## Final validation update
+React/Vite UI, FastAPI API, Groq integration, optional Gemini integration, FAISS/MiniLM retrieval, isolated GTR mode, claim filtering, evidence ranking/filtering, source routing, cached/batched DeBERTa verification, SQLite history, dashboard, export, dynamic provider/source APIs, and structured error handling.
 
-Full regression: **60 passed, 1 skipped**. Existing 10- and 50-sample HaluEval outputs were validated against their prediction files and confusion matrices. The 100-sample, GTR, LLM baseline, and browser experiments remain NOT EXECUTED unless their required resources are available.
+## Validation
+
+Python compilation and React production build pass. The validated test baseline is 70 passed and 1 skipped. Live Groq analysis succeeds and returns concise factual responses.
+
+## Partial / manual
+
+Optional sources require credentials or adapter implementations. Browser interaction, responsive inspection, screenshots, and Gemini quota tests require manual validation. No unsupported source activity is claimed.
+
+## Release readiness
+
+**READY WITH MINOR LIMITATIONS** — suitable for a controlled demo and continued academic evaluation after manual browser acceptance testing.
