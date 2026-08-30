@@ -12,6 +12,7 @@ from services.gemini_service import GeminiProvider
 from verification.verification_pipeline import VerificationPipeline
 from sources.registry import source_catalog
 from api.storage import load_all, save
+from sources.adapters import ADAPTERS
 
 app = FastAPI(title="HaluCheck API", version="1.0.0")
 app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"], allow_methods=["*"], allow_headers=["*"])
@@ -58,6 +59,16 @@ def sources(): return source_catalog()
 
 @app.get("/api/sources/status")
 def source_status(): return {item["name"]: item["status"] for item in source_catalog()}
+
+@app.get("/api/sources/{source_id}/search")
+def source_search(source_id: str, claim: str):
+    adapter = ADAPTERS.get(source_id)
+    if not adapter: raise HTTPException(404, "Source adapter is not available.")
+    if not adapter.is_configured(): raise HTTPException(503, "Source is not configured.")
+    try:
+        return [item.__dict__ for item in adapter.search(claim)]
+    except Exception:
+        raise HTTPException(502, "Source unavailable; continuing with other sources.")
 
 @app.get("/api/history")
 def history(): return HISTORY

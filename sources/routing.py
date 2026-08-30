@@ -2,6 +2,7 @@
 from dataclasses import dataclass
 import re
 from typing import Iterable
+import hashlib
 
 @dataclass(frozen=True)
 class EvidenceScore:
@@ -41,3 +42,12 @@ def fuse_scores(scores: Iterable[EvidenceScore]) -> float:
     combined = 1.0
     for item in unique.values(): combined *= 1.0 - item.score
     return max(0.0, min(1.0, 1.0 - combined))
+
+def deduplicate_evidence(items: Iterable[dict]) -> list[dict]:
+    """Remove exact normalized duplicates while retaining provenance."""
+    seen: set[str] = set(); result=[]
+    for item in items:
+        text = " ".join(" ".join(str(item.get(k, "") or "").lower().split()) for k in ("title", "content", "url"))
+        key = hashlib.sha256(text.encode()).hexdigest()
+        if key not in seen: seen.add(key); result.append(item)
+    return result

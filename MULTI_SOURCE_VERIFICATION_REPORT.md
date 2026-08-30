@@ -12,6 +12,11 @@ weighted evidence scoring, independent-source fusion, and SQLite persistence
 for completed API analyses. These helpers are isolated and do not alter the
 existing NLI decision rules.
 
+The first real external adapters are now available behind the source API:
+Wikidata, World Bank, PubMed, Crossref, OpenAlex, and Google Fact Check (the
+latter requires `GOOGLE_FACT_CHECK_API_KEY`). They normalize official API
+responses into a shared evidence model with timeouts and failure isolation.
+
 ## Sources and priority
 
 Tier 1: Government, UN Data, World Bank, WHO, NASA, NOAA.
@@ -34,9 +39,12 @@ sources requiring credentials or licensing are explicitly marked
 
 ## Limitations
 
-Only the existing Local Knowledge Base and Wikipedia adapters currently execute
-retrieval in the production pipeline. The registry and routing modules are the
-safe extension point
+The existing analysis pipeline still executes Local Knowledge Base and
+Wikipedia retrieval by default. The new adapters are callable through
+`/api/sources/{source_id}/search` and are the safe extension point for wiring
+source-specific retrieval into the pipeline after domain routing and API
+availability policy are finalized. Government, UN, WHO, NASA, NOAA, Britannica,
+and Reuters/AP remain explicit configuration/licensing extension points.
 for Wikidata, World Bank, UN, WHO, academic, NASA/NOAA, fact-check, government,
 and news adapters; each requires its own API/terms/rate-limit implementation
 before being enabled for verification.
