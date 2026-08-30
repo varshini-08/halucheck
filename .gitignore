@@ -102,6 +102,7 @@ outputs/
 Thumbs.db
 .cache/
 results/pytest_temp/
+results/*.sqlite3
 huggingface/
 models/
 checkpoints/
