@@ -11,10 +11,11 @@ from services.llm_service import GroqProvider, LLMServiceException
 from services.gemini_service import GeminiProvider
 from verification.verification_pipeline import VerificationPipeline
 from sources.registry import source_catalog
+from api.storage import load_all, save
 
 app = FastAPI(title="HaluCheck API", version="1.0.0")
 app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"], allow_methods=["*"], allow_headers=["*"])
-HISTORY: list[dict] = []
+HISTORY: list[dict] = load_all()
 
 class AnalyzeRequest(BaseModel):
     question: str
@@ -78,7 +79,7 @@ def analyze(request: AnalyzeRequest):
         llm = GeminiProvider(key, _model(provider)) if provider == "gemini" else GroqProvider(key, _model(provider))
         started = perf_counter(); response = llm.generate_response(question)
         result = pipeline().analyse(response, question=question)
-        payload = _serialize(result, question, provider, perf_counter() - started); HISTORY.append(payload); return payload
+        payload = _serialize(result, question, provider, perf_counter() - started); HISTORY.insert(0, payload); save(payload); return payload
     except (LLMServiceException, Exception) as exc:
         raise HTTPException(502, str(exc)) from exc
 
