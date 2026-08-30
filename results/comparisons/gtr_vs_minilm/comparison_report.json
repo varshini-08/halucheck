@@ -1,0 +1,9 @@
+{
+  "dataset": "data/halu_eval/general_data.json",
+  "seed": 42,
+  "sample_ids_match": true,
+  "sample_count": 10,
+  "gtr": {"model": "sentence-transformers/gtr-t5-base", "retrieval_mode": "paper/GTR", "embedding_dimension": 768, "accuracy": 0.7, "precision": 0.0, "recall": 0.0, "f1": 0.0, "tp": 0, "tn": 7, "fp": 1, "fn": 2, "successful_samples": 10, "failed_samples": 0, "average_latency_seconds": 8.86046418},
+  "minilm": {"model": "sentence-transformers/all-MiniLM-L6-v2", "retrieval_mode": "current hybrid local knowledge base + Wikipedia fallback", "embedding_dimension": 384, "accuracy": 0.8, "precision": 0.0, "recall": 0.0, "f1": 0.0, "tp": 0, "tn": 8, "fp": 0, "fn": 2, "successful_samples": 10, "failed_samples": 0, "average_latency_seconds": 9.54967052},
+  "conclusion": "On this matched 10-sample run, MiniLM had higher accuracy (0.80 vs 0.70). This small result does not establish model superiority."
+}

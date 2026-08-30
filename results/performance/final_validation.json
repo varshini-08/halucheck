@@ -1,0 +1,48 @@
+{
+  "sample_id": "1",
+  "dataset": "data/halu_eval/general_data.json",
+  "cold": {
+    "question": "Produce a list of common words in the English language.",
+    "fact_count": 1,
+    "entity_count": 0,
+    "evidence_count": 0,
+    "predicted_label": "no_hallucination",
+    "stages": {
+      "extraction_and_entities_seconds": null,
+      "embedding_seconds": null,
+      "local_faiss_seconds": 50.05312519999984,
+      "wikipedia_search_seconds": 0.0,
+      "wikipedia_article_seconds": 0.0,
+      "wikipedia_chunk_ranking_seconds": 0.0,
+      "nli_seconds": null,
+      "classification_seconds": null,
+      "total_seconds": 53.30913680000003
+    },
+    "cache_hits": 0,
+    "cache_misses": 1,
+    "note": "Unset stage values are not instrumented separately in the existing production pipeline; no timings are estimated."
+  },
+  "warm": {
+    "question": "Produce a list of common words in the English language.",
+    "fact_count": 1,
+    "entity_count": 0,
+    "evidence_count": 0,
+    "predicted_label": "no_hallucination",
+    "stages": {
+      "extraction_and_entities_seconds": null,
+      "embedding_seconds": null,
+      "local_faiss_seconds": 50.05312519999984,
+      "wikipedia_search_seconds": 0.0,
+      "wikipedia_article_seconds": 0.0,
+      "wikipedia_chunk_ranking_seconds": 0.0,
+      "nli_seconds": null,
+      "classification_seconds": null,
+      "total_seconds": 0.44454560000008314
+    },
+    "cache_hits": 1,
+    "cache_misses": 1,
+    "note": "Unset stage values are not instrumented separately in the existing production pipeline; no timings are estimated."
+  },
+  "prediction_consistency": true,
+  "note": "Measured in one process; model caches remain warm for the second pass."
+}

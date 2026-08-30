@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "index": "D:\\halu\\vector_db\\gtr_base.index",
+  "metadata": "D:\\halu\\vector_db\\gtr_base_metadata.pkl",
+  "manifest": "D:\\halu\\vector_db\\gtr_base_manifest.json",
+  "actual": {
+    "model": "sentence-transformers/gtr-t5-base",
+    "embedding_dimension": 768,
+    "vector_count": 7,
+    "metadata_count": 7,
+    "index_type": "IndexFlatIP",
+    "retrieval_mode": "paper"
+  },
+  "manifest_values": {
+    "model": "sentence-transformers/gtr-t5-base",
+    "embedding_dimension": 768,
+    "vector_count": 7,
+    "metadata_count": 7,
+    "index_type": "faiss.IndexFlatIP",
+    "retrieval_mode": "paper",
+    "built_at_utc": "2026-08-24T16:23:19.185783+00:00",
+    "index_path": "D:\\halu\\vector_db\\gtr_base.index",
+    "metadata_path": "D:\\halu\\vector_db\\gtr_base_metadata.pkl"
+  },
+  "checks": {
+    "model_is_gtr": true,
+    "dimension_is_768": true,
+    "metadata_matches_vectors": true,
+    "manifest_vector_count_matches": true,
+    "manifest_metadata_count_matches": true,
+    "manifest_dimension_matches": true,
+    "paper_mode": true,
+    "separate_from_minilm": true
+  }
+}

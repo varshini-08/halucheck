@@ -1,0 +1,2160 @@
+[
+  {
+    "sample_id": "3684",
+    "query": "Create a 100-word description of a room",
+    "response": "The room was spacious and bright, with large windows letting in the warm sunlight of the late afternoon. Against one wall stood a sleek, modern sofa upholstered in rich cream leather, flanked by a matching armchair. In the center of the room, a low coffee table held a collection of art books and a vase of fresh-cut flowers. Above the table hung a stunning chandelier with glimmering crystals catching the light. On the opposite wall, a massive mahogany bookcase reached to the ceiling, filled with a collection of antique volumes and modern paperbacks alike. A plush wool rug lay beneath the furniture, and a collection of framed artwork adorned the walls, completing the room\u2019s air of elegance and comfort.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 8,
+    "supported_fact_count": 2,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 6,
+    "confidence": 0.34228515625,
+    "processing_time_seconds": 104.09912080000001,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "The room was spacious and bright, with large windows letting in the warm sunlight of the late afternoon.",
+        "label": "SUPPORTED",
+        "confidence": 0.90234375,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "Against one wall stood a sleek, modern sofa upholstered in rich cream leather, flanked by a matching armchair.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "a low coffee table held a collection of art books.",
+        "label": "SUPPORTED",
+        "confidence": 0.8564453125,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "a low coffee table held a vase of fresh-cut flowers.",
+        "label": "NEUTRAL",
+        "confidence": 0.9794921875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Above the table hung a stunning chandelier with glimmering crystals catching the light.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "On the opposite wall, a massive mahogany bookcase reached to the ceiling, filled with a collection of antique volumes and modern paperbacks alike.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "A plush wool rug lay beneath the furniture.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "a collection of framed artwork adorned the walls, completing the room\u2019s air of elegance and comfort.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "1783",
+    "query": "Generate an example of a time when someone displayed initiative.",
+    "response": "One example of someone displaying initiative could be a student who noticed that their school's recycling program was lacking and decided to take action. The student researched the benefits of recycling, created a proposal outlining how to improve the program, and spoke to the school administration about implementing changes. They also took on the responsibility of educating their peers and promoting the new program throughout their school. Thanks to their initiative, the school was able to reduce its environmental impact and inspire others to do the same.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 4,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 4,
+    "confidence": 0.953857421875,
+    "processing_time_seconds": 91.85231590000001,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "One example of someone displaying initiative could be a student who noticed that their school's recycling program was lacking and decided to take action.",
+        "label": "NEUTRAL",
+        "confidence": 0.9482421875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "The student researched the benefits of recycling, created a proposal outlining how to improve the program, and spoke to the school administration about implementing changes.",
+        "label": "NEUTRAL",
+        "confidence": 0.9111328125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "They also took on the responsibility of educating their peers and promoting the new program throughout their school.",
+        "label": "NEUTRAL",
+        "confidence": 0.970703125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Thanks to their initiative, the school was able to reduce its environmental impact and inspire others to do the same.",
+        "label": "NEUTRAL",
+        "confidence": 0.9853515625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "552",
+    "query": "Design an algorithm to identify a person's age from their date of birth.",
+    "response": "1. Input the person's date of birth in the format of DD/MM/YYYY.\n2. Extract the year of birth from the input and assign it to a variable.\n3. Calculate the current year and assign it to another variable.\n4. Calculate the difference between the current year and the year of birth to obtain the age.\n5. Display the age as the output.\n\nExample code in Python:\n\n```\ndob = input(\"Enter date of birth in DD/MM/YYYY format: \")\nyear_of_birth = int(dob[-4:])\ncurrent_year = datetime.now().year\nage = current_year - year_of_birth\nprint(\"The person's age is:\", age)\n``` \n(Note: this code uses the Python datetime module to obtain the current year.)",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 1,
+    "supported_fact_count": 1,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 0,
+    "confidence": 0.80859375,
+    "processing_time_seconds": 23.45824909999999,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "current_year = datetime.now().year\nage = current_year - year_of_birth\nprint(\"The person's age is:\", age)\n``` \n(Note: this code uses the Python datetime module to obtain the current year.)",
+        "label": "SUPPORTED",
+        "confidence": 0.80859375,
+        "reason": "At least one retrieved passage entails this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "2139",
+    "query": "Figure out why this code does not work\nconst fruits = [ 'apple', 'orange', 'banana' ]; \n\nfruits.forEach(x =>  console.log(`I love ${x}`) );",
+    "response": "This code should work correctly. It declares an array called \"fruits\" containing three strings, and then uses the \"forEach\" method to loop through each element in the array and log a message to the console using a template literal. The output should be:\n\nI love apple\nI love orange\nI love banana\n\nIf this code is not working, there may be an error elsewhere in the program, or the console may not be displaying the output for some reason. Some potential troubleshooting steps could include checking for syntax errors or incorrect variable names, using the console.log function to debug the code, or trying to run the code in a different environment or browser to see if the issue persists.",
+    "expected_label": "hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 5,
+    "supported_fact_count": 2,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 3,
+    "confidence": 0.66826171875,
+    "processing_time_seconds": 90.14050400000002,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "It declares an array called \"fruits\" containing three strings.",
+        "label": "SUPPORTED",
+        "confidence": 0.94287109375,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "It uses the \"forEach\" method to loop through each element in the array and log a message to the console using a template literal.",
+        "label": "NEUTRAL",
+        "confidence": 0.50830078125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "The output should be:\n\nI love apple\nI love orange\nI love banana",
+        "label": "NEUTRAL",
+        "confidence": 0.97216796875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "If this code is not working, there may be an error elsewhere in the program, or the console may not be displaying the output for some reason.",
+        "label": "SUPPORTED",
+        "confidence": 0.91796875,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "Some potential troubleshooting steps could include checking for syntax errors or incorrect variable names, using the console.log function to debug the code, or trying to run the code in a different environment or browser to see if the issue persists.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "1964",
+    "query": "Add an example to illustrate the meaning of the idiom \"a piece of cake\".",
+    "response": "When we asked him to solve that complicated math problem, he said it was a piece of cake and solved it in minutes.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 1,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 1,
+    "confidence": 0.6171875,
+    "processing_time_seconds": 27.40348210000002,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "When we asked him to solve that complicated math problem, he said it was a piece of cake and solved it in minutes.",
+        "label": "NEUTRAL",
+        "confidence": 0.6171875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "3001",
+    "query": "Find 3 quotes from 'Harry Potter and the Sorcerer's Stone'.",
+    "response": "1. \"It does not do to dwell on dreams and forget to live.\" - Albus Dumbledore \n\n2. \"It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.\" - Albus Dumbledore \n\n3. \"To the well-organized mind, death is but the next great adventure.\" - Albus Dumbledore",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 3,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 3,
+    "confidence": 0.0,
+    "processing_time_seconds": 1.2118793000000778,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "\"It does not do to dwell on dreams and forget to live.\"",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "\"It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.\"",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "\"To the well-organized mind, death is but the next great adventure.\"",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "1601",
+    "query": "Create an analogy that illustrates the difference between a programming language and an API",
+    "response": "A programming language is like a toolbox filled with different types of tools, each with its own specific function. Each tool can be used to create something new or modify existing objects, much like how a programming language can be used to write code to perform specific tasks.\n\nOn the other hand, an API is like a pre-built assembly that uses a specific set of tools from the programming language toolbox. This assembly allows you to easily accomplish a specific task without having to write all the code from scratch. Just like how you can use an assembly to speed up the building process, an API can be used to speed up the development process, making it easier and faster to create complex applications.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 5,
+    "supported_fact_count": 2,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 3,
+    "confidence": 0.35869140625,
+    "processing_time_seconds": 46.765087900000026,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "A programming language is like a toolbox filled with different types of tools, each with its own specific function.",
+        "label": "SUPPORTED",
+        "confidence": 0.8876953125,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "Each tool can be used to create something new or modify existing objects, much like how a programming language can be used to write code to perform specific tasks.",
+        "label": "SUPPORTED",
+        "confidence": 0.90576171875,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "On the other hand, an API is like a pre-built assembly that uses a specific set of tools from the programming language toolbox.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "This assembly allows you to easily accomplish a specific task without having to write all the code from scratch.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Just like how you can use an assembly to speed up the building process, an API can be used to speed up the development process, making it easier and faster to create complex applications.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "488",
+    "query": "Predict the values of x and y in the following equation: 9x + 4y = 36.",
+    "response": "There are infinitely many (x, y) pairs that could satisfy this equation, so without more information it is not possible to predict specific values for x and y. \n\nHowever, we can rearrange the equation to the slope-intercept form y = mx + b, where m is the slope and b is the y-intercept:\n\n9x + 4y = 36\n4y = -9x + 36   (subtract 9x from both sides)\ny = (-9/4)x + 9  (divide both sides by 4)\n\nFrom this form, we can see that the slope of the line is -9/4, meaning that for every increase in x by 4 units, y decreases by 9 units. The y-intercept is 9, meaning that the line passes through the point (0,9) on the y-axis. With this information, we can graph the line and determine various (x,y) pairs that satisfy the equation.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 7,
+    "supported_fact_count": 3,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 4,
+    "confidence": 0.42410714285714285,
+    "processing_time_seconds": 92.64932720000002,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "There are infinitely many (x, y) pairs that could satisfy this equation, so without more information it is not possible to predict specific values for x and y.",
+        "label": "NEUTRAL",
+        "confidence": 0.5771484375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "However, we can rearrange the equation to the slope-intercept form y = mx + b, where m is the slope and b is the y-intercept:\n\n9x + 4y = 36\n4y = -9x + 36   (subtract 9x from both sides)",
+        "label": "SUPPORTED",
+        "confidence": 0.7451171875,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "From this form, we can see that the slope of the line is -9/4, meaning that for every increase in x by 4 units, y decreases by 9 units.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "The y-intercept is 9, meaning that the line passes through the point (0,9) on the y-axis.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "we can graph the line.",
+        "label": "SUPPORTED",
+        "confidence": 0.91455078125,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "we determine various (x,y).",
+        "label": "SUPPORTED",
+        "confidence": 0.73193359375,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "we pairs that satisfy the equation.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "3271",
+    "query": "Analyze the given poem and rewrite it with a new title and an altered tone.\nTitle: \"Lost\"\n\nI stare out into the void,\nSearching for a life I never employed.\n\nMy path is a long, sad descent,\nWords mean nothing as I relent.",
+    "response": "Rewritten Poem:\n\nTitle: \"On the Search for Purpose\"\n\nWith a hesitant gaze and a curious mind,\nI set out to find what I've yet to define.\n\nA journey with twists and turns on every bend,\nBut each step taken, I gain new friend.\n\nThe words matter, they have the power,\nTo ignite hope in the darkest hour.\n\nNo longer do I feel lost and alone,\nMy purpose awaits, a journey to be shown.",
+    "expected_label": "hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 4,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 4,
+    "confidence": 0.6597900390625,
+    "processing_time_seconds": 70.3244803,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "Title: \"On the Search for Purpose\"\n\nWith a hesitant gaze and a curious mind,\nI set out to find what I've yet to define.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "A journey with twists and turns on every bend,\nBut each step taken, I gain new friend.",
+        "label": "NEUTRAL",
+        "confidence": 0.83154296875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "The words matter, they have the power,\nTo ignite hope in the darkest hour.",
+        "label": "NEUTRAL",
+        "confidence": 0.8330078125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "No longer do I feel lost and alone,\nMy purpose awaits, a journey to be shown.",
+        "label": "NEUTRAL",
+        "confidence": 0.974609375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "4429",
+    "query": "Find the mistakes in the following table\nCountry | Capital | Population\nRussia | Moscow | 145.93 million\nFrance | London | 67.41 million",
+    "response": "Mistakes:\n1. The capital of France is not London, it is Paris.\n2. The population of London is not listed correctly, as it is a city and not a country.\nCorrected table:\nCountry | Capital | Population\nRussia | Moscow | 145.93 million\nFrance | Paris | 67.41 million",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 2,
+    "supported_fact_count": 2,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 0,
+    "confidence": 0.90283203125,
+    "processing_time_seconds": 46.28956619999997,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "The capital of France is not London, it is Paris.",
+        "label": "SUPPORTED",
+        "confidence": 0.99560546875,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "The population of London is not listed correctly, as it is a city and not a country.",
+        "label": "SUPPORTED",
+        "confidence": 0.81005859375,
+        "reason": "At least one retrieved passage entails this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "723",
+    "query": "Create a top-down outline for writing a logical argument.",
+    "response": "I. Introduction\n A. Background Information\n B. Thesis Statement\n\nII. Context of the Argument\n A. The Problem or Issue\n B. The Importance of the Issue\n C. Key terms and Concepts\n\nIII. Evidence of the Argument\n A. Facts and Data\n B. Statistics\n C. Expert Opinions\n D. Personal Experiences\n\nIV. Counterarguments\n A. Explanation of opposing arguments\n B. Refutation of opposing arguments\n\nV. Conclusion\n A. Recap of the Argument\n B. Call to Action or Solution\n C. Overall Implications and Future Considerations",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 0,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 0,
+    "confidence": 0.0,
+    "processing_time_seconds": 0.1589556999999786,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [],
+    "error": null
+  },
+  {
+    "sample_id": "584",
+    "query": "Write a rhyming poem containing at least 10 lines.",
+    "response": "I woke up early with the sun,\nTo start the day, to get it done.\nThe birds were chirping in the trees,\nA gentle breeze, a perfect breeze.\n\nI stretched my arms up to the sky,\nTo feel the air, make myself fly.\nA cup of coffee in my hand,\nMy senses waking up their band.\n\nI took a walk down by the creek,\nTo find some peace, a place to sneak.\nI saw some flowers, oh so bright,\nAnd felt the world now feels so right.\n\nA brand new day, a fresh, clean slate,\nLet's not waste time, let's not be late.\nThe journey's long, but it's worthwhile,\nWith every step, we'll learn to smile.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 9,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 9,
+    "confidence": 0.4459635416666667,
+    "processing_time_seconds": 91.53389920000006,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "I woke up early with the sun,\nTo start the day, to get it done.",
+        "label": "NEUTRAL",
+        "confidence": 0.470703125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "The birds were chirping in the trees,\nA gentle breeze, a perfect breeze.",
+        "label": "NEUTRAL",
+        "confidence": 0.802734375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "I stretched my arms up to the sky,\nTo feel the air, make myself fly.",
+        "label": "NEUTRAL",
+        "confidence": 0.95751953125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "A cup of coffee in my hand,\nMy senses waking up their band.",
+        "label": "NEUTRAL",
+        "confidence": 0.943359375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "I took a walk down by the creek,\nTo find some peace, a place to sneak.",
+        "label": "NEUTRAL",
+        "confidence": 0.83935546875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "I saw some flowers, oh so bright,.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "I felt the world now feels so right.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "A brand new day, a fresh, clean slate,\nLet's not waste time, let's not be late.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "The journey's long, but it's worthwhile,\nWith every step, we'll learn to smile.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "3567",
+    "query": "List three possible problems that a faulty Internet connection can cause.",
+    "response": "1. Slow Loading Times: A faulty internet connection can cause slow loading times, which can be frustrating and lead to decreased productivity.\n\n2. Limited Access: A faulty internet connection can limit your access to the internet, which can be a major problem if you rely on the internet for work or other essential tasks.\n\n3. Security Vulnerabilities: A faulty internet connection can leave your computer or network vulnerable to security threats, such as malware or hacking attacks. This can lead to data loss, identity theft, and other serious problems.",
+    "expected_label": "hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 5,
+    "supported_fact_count": 2,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 3,
+    "confidence": 0.804296875,
+    "processing_time_seconds": 114.62998230000005,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "Slow Loading Times: A faulty internet connection can cause slow loading times, which can be frustrating and lead to decreased productivity.",
+        "label": "NEUTRAL",
+        "confidence": 0.91064453125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "2. Limited Access: A faulty internet connection can limit your access to the internet, which can be a major problem if you rely on the internet for work or other essential tasks.",
+        "label": "NEUTRAL",
+        "confidence": 0.7353515625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "A faulty internet connection can leave your your computer vulnerable to security threats , such as malware.",
+        "label": "SUPPORTED",
+        "confidence": 0.78857421875,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "A faulty internet connection can leave your network.",
+        "label": "SUPPORTED",
+        "confidence": 0.74755859375,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "This can lead to data loss, identity theft, and other serious problems.",
+        "label": "NEUTRAL",
+        "confidence": 0.83935546875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "4492",
+    "query": "Describe a new use case for a given product.\nSmartwatch",
+    "response": "A new use case for a smartwatch could be to monitor and track the health of the wearer's pets. With the help of sensors such as heart rate monitor and GPS, the smartwatch can track the pet's movement, heart rate, and activity levels. It can also provide reminders for the pet's feeding and medication schedules. The information collected can be integrated with the veterinarian's records to help better manage the pet's health. Pet owners can also receive alerts on their smartwatches if their pets become lost or stray away from their designated safe zones. This use case adds an extra layer of support to pet owners who want to keep their furry friends healthy and safe.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 7,
+    "supported_fact_count": 1,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 6,
+    "confidence": 0.6236049107142857,
+    "processing_time_seconds": 110.05058020000001,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "A new use case for a smartwatch could be to monitor and track the health of the wearer's pets.",
+        "label": "NEUTRAL",
+        "confidence": 0.984375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "the smartwatch can track the pet's the pet 's movement ,.",
+        "label": "NEUTRAL",
+        "confidence": 0.779296875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "the smartwatch can track the pet's heart rate , and activity levels.",
+        "label": "NEUTRAL",
+        "confidence": 0.8017578125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "It can also provide reminders for the pet's feeding and medication schedules.",
+        "label": "SUPPORTED",
+        "confidence": 0.82861328125,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "The information collected can be integrated with the veterinarian's records to help better manage the pet's health.",
+        "label": "NEUTRAL",
+        "confidence": 0.97119140625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Pet owners can also receive alerts on their smartwatches if their pets become lost or stray away from their designated safe zones.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "This use case adds an extra layer of support to pet owners who want to keep their furry friends healthy and safe.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "442",
+    "query": "Write a horror story in 5 or less sentences.",
+    "response": "The doll sat on the shelf, its glass eyes glinting in the moonlight. As I walked past, it turned its head to follow me. Later that night, I woke up to the sound of giggling, and saw the doll at the end of my bed. Suddenly, its face contorted into a horrifying smile, revealing razor-sharp teeth, and it lunged towards me.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 6,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 6,
+    "confidence": 0.63623046875,
+    "processing_time_seconds": 82.5280388000001,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "The doll sat on the shelf, its glass eyes glinting in the moonlight.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "As I walked past, it turned its head to follow me.",
+        "label": "NEUTRAL",
+        "confidence": 0.984375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "I woke up to the sound of giggling.",
+        "label": "NEUTRAL",
+        "confidence": 0.994140625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "I saw the doll at the end of my bed.",
+        "label": "NEUTRAL",
+        "confidence": 0.978515625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "its face contorted into a horrifying smile, revealing razor-sharp teeth.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "it lunged towards me.",
+        "label": "NEUTRAL",
+        "confidence": 0.8603515625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "2556",
+    "query": "Explain the concept of 'code smell'.",
+    "response": "Code smell refers to any characteristic or attribute in the source code of a computer program that might indicate the presence of a more significant issue. It is often described as any indicator that the code is not as it should be and needs improvement.\n\nThe term \"code smell\" is often used metaphorically, as it's similar to how unpleasant smells can indicate disease, rot, or other issues. Some common signs of code smells include features that are hard to modify or debug, redundant code, large and complex modules, excessively verbose functions, and poor naming practices.\n\nSpotting code smells is critical because they can be an early warning sign of much more significant issues that can cause significant problems if they're allowed to persist. By addressing code smells promptly, developers can proactively improve the quality of their code and prevent more significant issues from developing down the line.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 7,
+    "supported_fact_count": 1,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 6,
+    "confidence": 0.5153459821428571,
+    "processing_time_seconds": 91.94284850000008,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "Code smell refers to any characteristic or attribute in the source code of a computer program that might indicate the presence of a more significant issue.",
+        "label": "NEUTRAL",
+        "confidence": 0.8447265625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "It is often described as any indicator that the code is not as it should be and needs improvement.",
+        "label": "NEUTRAL",
+        "confidence": 0.95947265625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "The term \"code smell\" is often used metaphorically, as it's similar to how unpleasant smells can indicate disease, rot, or other issues.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Some common signs of code smells include features that are hard to modify or debug, redundant code, large and complex modules, excessively verbose functions, and poor naming practices.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Spotting code smells is critical because they can be an early warning sign of much more significant issues that can cause significant problems if they're allowed to persist.",
+        "label": "SUPPORTED",
+        "confidence": 0.875,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "developers can proactively improve the quality of their code.",
+        "label": "NEUTRAL",
+        "confidence": 0.92822265625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "developers prevent more significant issues from developing down the line.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "2408",
+    "query": "What invention from the 1950s still has an impact today?",
+    "response": "The transistor, invented in the late 1940s and popularized in the 1950s, still has a significant impact today as a fundamental component in modern electronics. It revolutionized the field of electronics by replacing bulky and unreliable vacuum tubes with smaller and more efficient components, paving the way for the development of technologies such as the personal computer, smartphones, and modern medical equipment.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 2,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 2,
+    "confidence": 0.483642578125,
+    "processing_time_seconds": 24.28992459999995,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "The transistor, invented in the late 1940s and popularized in the 1950s, still has a significant impact today as a fundamental component in modern electronics.",
+        "label": "NEUTRAL",
+        "confidence": 0.96728515625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "It revolutionized the field of electronics by replacing bulky and unreliable vacuum tubes with smaller and more efficient components, paving the way for the development of technologies such as the personal computer, smartphones, and modern medical equipment.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "3086",
+    "query": "Summarize the recent news about unemployment.",
+    "response": "As an AI language model, I do not have access to current news. However, here's a general summary of some past news about unemployment: In 2020, unemployment rates in many countries rose significantly due to the COVID-19 pandemic, resulting in business closures and job losses. Governments introduced stimulus packages and unemployment benefits to support those impacted. As the global economy recovers, unemployment rates have started to decline, but there are fears of job losses continuing in certain sectors due to ongoing lockdowns and changing consumer behavior.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 6,
+    "supported_fact_count": 2,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 4,
+    "confidence": 0.42626953125,
+    "processing_time_seconds": 63.58918389999985,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "As an AI language model, I do not have access to current news.",
+        "label": "NEUTRAL",
+        "confidence": 0.85791015625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "However, here's a general summary of some past news about unemployment: In 2020, unemployment rates in many countries rose significantly due to the COVID-19 pandemic, resulting in business closures and job losses.",
+        "label": "SUPPORTED",
+        "confidence": 0.70068359375,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "Governments introduced stimulus stimulus packages.",
+        "label": "SUPPORTED",
+        "confidence": 0.9990234375,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "Governments introduced stimulus unemployment benefits.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "unemployment rates have started to decline.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "unemployment rates are fears of job losses continuing in certain sectors due to ongoing lockdowns and changing consumer behavior.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "4329",
+    "query": "Name five business strategies businesses can use to succeed",
+    "response": "1. Differentiation Strategy - This strategy involves offering unique and differentiated products or services that stand out in the market, making it difficult for competitors to replicate or imitate.\n\n2. Cost Leadership Strategy - This strategy focuses on offering products or services at lower prices than competitors while maintaining quality and profitability.\n\n3. Market Penetration Strategy - This strategy involves expanding the company's market share by increasing sales of existing products or services to existing customers or targeting new market segments.\n\n4. Diversification Strategy - This strategy involves expanding the company's product or service offerings into new markets or industries to reduce dependence on a single product or market.\n\n5. Innovation Strategy - This strategy involves constantly developing new and innovative products or services to keep up with changing customer needs and tastes, thereby maintaining a competitive edge.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 5,
+    "supported_fact_count": 1,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 4,
+    "confidence": 0.8791015625,
+    "processing_time_seconds": 114.74065619999988,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "This strategy involves offering unique and differentiated products or services that stand out in the market, making it difficult for competitors to replicate or imitate.",
+        "label": "SUPPORTED",
+        "confidence": 0.82958984375,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "This strategy focuses on offering products or services at lower prices than competitors while maintaining quality and profitability.",
+        "label": "NEUTRAL",
+        "confidence": 0.99560546875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "This strategy involves expanding the company's market share by increasing sales of existing products or services to existing customers or targeting new market segments.",
+        "label": "NEUTRAL",
+        "confidence": 0.6328125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "This strategy involves expanding the company's product or service offerings into new markets or industries to reduce dependence on a single product or market.",
+        "label": "NEUTRAL",
+        "confidence": 0.96337890625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "This strategy involves constantly developing new and innovative products or services to keep up with changing customer needs and tastes, thereby maintaining a competitive edge.",
+        "label": "NEUTRAL",
+        "confidence": 0.97412109375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "4417",
+    "query": "Provide a brief explanation of the String Theory.",
+    "response": "String Theory is a theoretical framework that attempts to reconcile quantum mechanics and general relativity by describing fundamental particles as tiny, one-dimensional strings instead of point-like particles. These strings vibrate at different frequencies, giving rise to different particles and their properties. String theory suggests that there may be extra dimensions beyond the three spatial and one temporal dimensions we experience, and that gravity may be related to the curvature of space-time caused by these extra dimensions. However, since string theory has yet to be experimentally confirmed, it remains a topic of debate and scrutiny within the scientific community.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 4,
+    "supported_fact_count": 1,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 3,
+    "confidence": 0.8521728515625,
+    "processing_time_seconds": 94.1060167999999,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "String Theory is a theoretical framework that attempts to reconcile quantum mechanics and general relativity by describing fundamental particles as tiny, one-dimensional strings instead of point-like particles.",
+        "label": "SUPPORTED",
+        "confidence": 0.90283203125,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "These strings vibrate at different frequencies, giving rise to different particles and their properties.",
+        "label": "NEUTRAL",
+        "confidence": 0.642578125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "String theory suggests that there may be extra dimensions beyond the three spatial and one temporal dimensions we experience, and that gravity may be related to the curvature of space-time caused by these extra dimensions.",
+        "label": "NEUTRAL",
+        "confidence": 0.88037109375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "However, since string theory has yet to be experimentally confirmed, it remains a topic of debate and scrutiny within the scientific community.",
+        "label": "NEUTRAL",
+        "confidence": 0.98291015625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "3584",
+    "query": "Summarize the debate about global warming.",
+    "response": "The debate about global warming centers on whether or not human activity is the main cause of a significant rise in the Earth's average surface temperature. Those who argue that global warming is a real and pressing issue believe that the burning of fossil fuels like coal, oil and gas is releasing huge amounts of greenhouse gases, like carbon dioxide, into the atmosphere, causing the Earth to warm up. However, critics argue that climate change is a natural process and that global temperatures have fluctuated throughout history. Some also contend that the evidence to support human-caused global warming is not strong enough and that alternative explanations, like changes in the Earth's orbit, are more plausible. Despite ongoing debate, the overwhelming scientific consensus is that climate change is real and human-caused, and that the planet is likely to face increasingly severe consequences unless action is taken to curb emissions.",
+    "expected_label": "hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 5,
+    "supported_fact_count": 1,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 4,
+    "confidence": 0.921484375,
+    "processing_time_seconds": 117.67942370000014,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "The debate about global warming centers on whether or not human activity is the main cause of a significant rise in the Earth's average surface temperature.",
+        "label": "NEUTRAL",
+        "confidence": 0.78662109375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Those who argue that global warming is a real and pressing issue believe that the burning of fossil fuels like coal, oil and gas is releasing huge amounts of greenhouse gases, like carbon dioxide, into the atmosphere, causing the Earth to warm up.",
+        "label": "SUPPORTED",
+        "confidence": 0.896484375,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "However, critics argue that climate change is a natural process and that global temperatures have fluctuated throughout history.",
+        "label": "NEUTRAL",
+        "confidence": 0.95654296875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Some also contend that the evidence to support human-caused global warming is not strong enough and that alternative explanations, like changes in the Earth's orbit, are more plausible.",
+        "label": "NEUTRAL",
+        "confidence": 0.9853515625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Despite ongoing debate, the overwhelming scientific consensus is that climate change is real and human-caused, and that the planet is likely to face increasingly severe consequences unless action is taken to curb emissions.",
+        "label": "NEUTRAL",
+        "confidence": 0.982421875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "4506",
+    "query": "Predict the 2021 wildfire season in California.",
+    "response": "As an AI language model, I do not have the capability to predict the future with certainty. However, based on historical trends and current weather conditions, it is likely that California will experience another active wildfire season in 2021. A combination of factors, including prolonged periods of drought, high temperatures, and strong winds, can contribute to the outbreak of wildland fires. Additionally, the accumulation of dry fuels such as grasses, shrubs, and dead wood can also increase the risk of wildfires. It is important for residents of California to remain vigilant and prepared in the event of a fire, and for authorities to take necessary measures to prevent and manage wildfires.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "hallucination",
+    "fact_count": 5,
+    "supported_fact_count": 3,
+    "contradicted_fact_count": 1,
+    "neutral_fact_count": 1,
+    "confidence": 0.79990234375,
+    "processing_time_seconds": 114.58720440000002,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "As an AI language model, I do not have the capability to predict the future with certainty.",
+        "label": "SUPPORTED",
+        "confidence": 0.73876953125,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "However, based on historical trends and current weather conditions, it is likely that California will experience another active wildfire season in 2021.",
+        "label": "SUPPORTED",
+        "confidence": 0.8095703125,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "A combination of factors, including prolonged periods of drought, high temperatures, and strong winds, can contribute to the outbreak of wildland fires.",
+        "label": "CONTRADICTED",
+        "confidence": 0.9560546875,
+        "reason": "The strongest retrieved NLI result contradicts this fact."
+      },
+      {
+        "fact": "Additionally, the accumulation of dry fuels such as grasses, shrubs, and dead wood can also increase the risk of wildfires.",
+        "label": "NEUTRAL",
+        "confidence": 0.7021484375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "It is important for residents of California to remain vigilant and prepared in the event of a fire, and for authorities to take necessary measures to prevent and manage wildfires.",
+        "label": "SUPPORTED",
+        "confidence": 0.79296875,
+        "reason": "At least one retrieved passage entails this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "4387",
+    "query": "List three methods to reduce stress",
+    "response": "1. Exercise: Physical activity is a great way to reduce stress. Exercise can improve your mood, reduce anxiety and depression, boost self-esteem, and increase your body's production of endorphins \u2013 the natural chemicals that make you feel good.\n\n2. Meditation: Mindfulness meditation is a proven technique for reducing stress, improving mental clarity, and enhancing overall well-being. By focusing your attention on the present moment, you can reduce stress and anxiety caused by worrying about the future or ruminating on past events.\n\n3. Social Support: Talking to friends and family members can help reduce stress. Sometimes just venting your worries and frustrations to others can help you feel better. You can also seek professional help from a therapist or counselor if you need additional support. Having a strong social support system can make a big difference in your ability to cope with stress.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 9,
+    "supported_fact_count": 2,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 7,
+    "confidence": 0.4064670138888889,
+    "processing_time_seconds": 86.53987959999995,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "Exercise: Physical activity is a great way to reduce stress.",
+        "label": "SUPPORTED",
+        "confidence": 0.98974609375,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "Exercise can improve your mood, reduce anxiety and depression, boost self-esteem, and increase your body's production of endorphins \u2013 the natural chemicals that make you feel good.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Mindfulness meditation is a proven technique for reducing stress, improving mental clarity, and enhancing overall well-being.",
+        "label": "NEUTRAL",
+        "confidence": 0.93603515625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "you can reduce stress caused by worrying about the future.",
+        "label": "NEUTRAL",
+        "confidence": 0.86328125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "you can reduce anxiety.",
+        "label": "SUPPORTED",
+        "confidence": 0.869140625,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "3. Social Support: Talking to friends and family members can help reduce stress.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Sometimes just venting your worries and frustrations to others can help you feel better.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "You can also seek professional help from a therapist or counselor if you need additional support.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Having a strong social support system can make a big difference in your ability to cope with stress.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "2728",
+    "query": "What is the main difference between acute and chronic diseases?",
+    "response": "The main difference between acute and chronic diseases is the duration of the illness. Acute diseases have a sudden onset and last for a short period, usually a few days to a few weeks. Common examples of acute illnesses include cold and flu, ear infections, and appendicitis. Chronic diseases, on the other hand, are long-lasting illnesses that persist for months or years. These conditions often develop slowly and may include symptoms that come and go over time. Examples of chronic diseases include diabetes, heart disease, and arthritis.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 8,
+    "supported_fact_count": 4,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 4,
+    "confidence": 0.55499267578125,
+    "processing_time_seconds": 101.02752110000006,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "The main difference between acute and chronic diseases is the duration of the illness.",
+        "label": "SUPPORTED",
+        "confidence": 0.83203125,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "Acute diseases have a sudden onset.",
+        "label": "SUPPORTED",
+        "confidence": 0.990234375,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "Common examples of acute illnesses include cold and flu, ear cold , infections ,.",
+        "label": "SUPPORTED",
+        "confidence": 0.79736328125,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "Common examples of acute illnesses include cold and flu, ear appendicitis.",
+        "label": "NEUTRAL",
+        "confidence": 0.86865234375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Chronic diseases, on the other hand, are long-lasting illnesses that persist for months or years.",
+        "label": "SUPPORTED",
+        "confidence": 0.95166015625,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "These conditions include symptoms that come and go over time.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Examples of chronic diseases include diabetes ,.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Examples of chronic diseases include heart disease , and arthritis.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "4078",
+    "query": "Create a to-do list for a morning routine for a student.",
+    "response": "1. Wake up at a reasonable time\n2. Brush teeth and wash face\n3. Make the bed\n4. Get dressed in appropriate clothing for the day\n5. Eat breakfast\n6. Pack necessary school supplies\n7. Check schedule for the day and review any assignments\n8. Leave for school on time \n9. Take any necessary medication\n10. Say affirmations and set intentions for the day.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 1,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 1,
+    "confidence": 0.96142578125,
+    "processing_time_seconds": 2.0184529000000566,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "Brush teeth and wash face\n3. Make the bed\n4.",
+        "label": "NEUTRAL",
+        "confidence": 0.96142578125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "3374",
+    "query": "For the following statement, list two pros and two cons.\nIncreasing the budget for public education.",
+    "response": "Pros:\n1. Improved quality of education due to increased funding.\n2. More resources and opportunities available for students and teachers.\n\nCons:\n1. Higher taxes or reallocation of funds may be required, which may be controversial.\n2. Funding may not be distributed equally, and some districts may receive more resources than others.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 2,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 2,
+    "confidence": 0.9482421875,
+    "processing_time_seconds": 48.37496709999982,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "Higher taxes or reallocation of funds may be required, which may be controversial.",
+        "label": "NEUTRAL",
+        "confidence": 0.9423828125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "some districts be receive more resources than others.",
+        "label": "NEUTRAL",
+        "confidence": 0.9541015625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "4301",
+    "query": "Update the given code to make it more efficient.\nfor (int i=0; i < N; i++)\n  for (int j=0; j < N; j++)\n    A[i][j] = A[j][i];",
+    "response": "A more efficient implementation of the same code would be:\nfor (int i=0; i < N; i++)\n  for (int j=i+1; j < N; j++)\n    swap(A[i][j], A[j][i]);\n\nThis implementation avoids redundantly assigning values to the same indices and only loops through the upper triangle of the matrix. Additionally, it uses the swap function to exchange the values in the matrix, reducing the number of operations required.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 3,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 3,
+    "confidence": 0.4993489583333333,
+    "processing_time_seconds": 46.64374729999963,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "A more efficient implementation of the same code would be:\nfor (int i=0; i < N; i++)\n  for (int j=i+1; j < N; j++)\n    swap(A[i][j], A[j][i]);",
+        "label": "NEUTRAL",
+        "confidence": 0.52978515625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "This implementation avoids redundantly assigning values to the same indices and only loops through the upper triangle of the matrix.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Additionally, it uses the swap function to exchange the values in the matrix, reducing the number of operations required.",
+        "label": "NEUTRAL",
+        "confidence": 0.96826171875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "2505",
+    "query": "Combine two unrelated names and generate a superpower.\nEthan, Olivia",
+    "response": "Ethanvia - The power to manipulate sound waves and turn them into a physical force. This allows Ethanvia to create powerful sonic blasts, deafen opponents, and even control the movements of objects through sound vibrations. Additionally, Ethanvia possesses superhuman agility and reflexes, making them a formidable opponent in close combat.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 3,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 3,
+    "confidence": 0.0,
+    "processing_time_seconds": 0.653273999999783,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "This allows Ethanvia to create powerful sonic blasts, deafen opponents, and even control the movements of objects through sound vibrations.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Ethanvia possesses superhuman superhuman agility.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Ethanvia possesses superhuman reflexes.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "2459",
+    "query": "Analyze this sentence: \"She blamed his unprofessional behavior on his lack of experience\"",
+    "response": "This sentence is a cause-and-effect statement. The subject \"She\" is blaming \"his unprofessional behavior\" on the object \"his lack of experience\". The sentence implies that the person acted unprofessionally because they lacked experience. It also suggests that the person could behave differently if they gained more experience.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 4,
+    "supported_fact_count": 1,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 3,
+    "confidence": 0.7169189453125,
+    "processing_time_seconds": 69.2691863,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "This sentence is a cause-and-effect statement.",
+        "label": "SUPPORTED",
+        "confidence": 0.95654296875,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "The subject \"She\" is blaming \"his unprofessional behavior\" on the object \"his lack of experience\".",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "The sentence implies that the person acted unprofessionally because they lacked experience.",
+        "label": "NEUTRAL",
+        "confidence": 0.9462890625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "It also suggests that the person could behave differently if they gained more experience.",
+        "label": "NEUTRAL",
+        "confidence": 0.96484375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "4025",
+    "query": "Create a reminder to take a break every 10 minutes while you are working.",
+    "response": "Reminder: Don't forget to take a break every 10 minutes while you are working. This will help you stay focused and avoid burnout. Set a timer or reminder on your phone to remind you when it is time to take a quick break, stretch your muscles or take a short walk. Remember, breaks are essential for your physical and mental health, so make sure you take them regularly.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 4,
+    "supported_fact_count": 1,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 3,
+    "confidence": 0.63671875,
+    "processing_time_seconds": 69.0099765,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "Reminder: Don't forget to take a break every 10 minutes while you are working.",
+        "label": "NEUTRAL",
+        "confidence": 0.91357421875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "This will help you stay focused and avoid burnout.",
+        "label": "NEUTRAL",
+        "confidence": 0.921875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Set a timer or reminder on your phone to remind you when it is time to take a quick break, stretch your muscles or take a short walk.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Remember, breaks are essential for your physical and mental health, so make sure you take them regularly.",
+        "label": "SUPPORTED",
+        "confidence": 0.71142578125,
+        "reason": "At least one retrieved passage entails this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "3004",
+    "query": "Create a metaphor for an organizational culture",
+    "response": "An organizational culture is like a garden, where a variety of plants, flowers, and trees thrive in different ways and contribute harmoniously to creating a beautiful and flourishing environment.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 1,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 1,
+    "confidence": 0.93212890625,
+    "processing_time_seconds": 24.710626800000227,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "An organizational culture is like a garden, where a variety of plants, flowers, and trees thrive in different ways and contribute harmoniously to creating a beautiful and flourishing environment.",
+        "label": "NEUTRAL",
+        "confidence": 0.93212890625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "1350",
+    "query": "Come up with 3 ways to improve given product.\nToothbrush",
+    "response": "1. Add a built-in timer to ensure users brush their teeth for the recommended two minutes. \n2. Include bristles of varying thickness and flexibility to provide a more thorough clean for people with different mouth shapes and sensitivities. \n3. Develop an eco-friendly version made from sustainable materials or with a reusable handle to reduce waste and environmental impact.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 1,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 1,
+    "confidence": 0.8359375,
+    "processing_time_seconds": 25.086051899999802,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "1. Add a built-in timer to ensure users brush their teeth for the recommended two minutes.",
+        "label": "NEUTRAL",
+        "confidence": 0.8359375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "49",
+    "query": "Summarize a given article in 50 words or less.",
+    "response": "The majority of finance decision markers believe automation and machine learning technology will replace roles in the finance industry, according to a study of 500 CFOs. However, only 16 percent of respondents plan to remove human staff from finance departments within in the next two years.\u00a0\n",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 2,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 2,
+    "confidence": 0.48828125,
+    "processing_time_seconds": 9.899817699999858,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "The majority of finance decision markers believe automation and machine learning technology will replace roles in the finance industry, according to a study of 500 CFOs.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "However, only 16 percent of respondents plan to remove human staff from finance departments within in the next two years.",
+        "label": "NEUTRAL",
+        "confidence": 0.9765625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "233",
+    "query": "Edit the poem to make it a sonnet.\nThe sky was so dark, and the stars so bright\nI almost fell as I looked up to the sky\nA storm is brewing, I can feel its might\nWhat wild secrets lurk up in the sky",
+    "response": "The sky's darkness and stars ablaze in sight,  \nMy eyes gazed upwards, lost in wonder's lie.  \nA tempest brews, its power now in flight,  \nI sense the chaos, swirling nigh on high.  \n\nWhat secrets hide amidst the clouds and space,  \nAs lightning strikes and thunder roars in fear?  \nDo deities preside o'er such grand grace,  \nAnd reign o'er nature's wrath with rules austere?  \n\nYet still I stand, my thoughts consumed with awe,  \nThe sky, a painting, vivid, bright, and rare.  \nAmid the storm, my heart begins to thaw,  \nFor beauty hides even in utmost scare.  \n\nOh, mighty sky, your secrets may confound,  \nBut in your awe, rare treasures can be found.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 8,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 8,
+    "confidence": 0.22784423828125,
+    "processing_time_seconds": 52.531830499999614,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "The sky's darkness and stars ablaze in sight,  \nMy eyes gazed upwards, lost in wonder's lie.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "A tempest brews, its power now in flight,  \nI sense the chaos, swirling nigh on high.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "What secrets hide amidst the clouds and space,",
+        "label": "NEUTRAL",
+        "confidence": 0.865234375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "deities Do deities preside o'er such grand grace,.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "deities reign o'er nature's wrath with rules austere.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Yet still I stand, my thoughts consumed with awe,  \nThe sky, a painting, vivid, bright, and rare.",
+        "label": "NEUTRAL",
+        "confidence": 0.95751953125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Amid the storm, my heart begins to thaw,  \nFor beauty hides even in utmost scare.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Oh, mighty sky, your secrets may confound,  \nBut in your awe, rare treasures can be found.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "3980",
+    "query": "What is a stack data structure?",
+    "response": "A stack data structure is a type of linear data structure in which elements are stored and accessed in a Last-In-First-Out (LIFO) manner, meaning the most recently added element is at the top and the oldest element is at the bottom. The stack has two primary operations: push, which adds an element to the top of the stack, and pop, which removes and returns the top element from the stack. Other operations may include peek, to view the top element without removing it, and empty, to determine if the stack is empty. Stacks are commonly used in programming languages, compilers, and operating systems to manage function calls, expressions, and system-level operations.",
+    "expected_label": "hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 4,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 4,
+    "confidence": 0.0,
+    "processing_time_seconds": 1.4473409000001993,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "A stack data structure is a type of linear data structure in which elements are stored and accessed in a Last-In-First-Out (LIFO) manner, meaning the most recently added element is at the top and the oldest element is at the bottom.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "The stack has two primary operations: push, which adds an element to the top of the stack, and pop, which removes and returns the top element from the stack.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Other operations may include peek, to view the top element without removing it, and empty, to determine if the stack is empty.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Stacks are commonly used in programming languages, compilers, and operating systems to manage function calls, expressions, and system-level operations.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "1091",
+    "query": "Come up with ten people who are currently the leading entrepreneurs in the technology industry.",
+    "response": "1) Elon Musk - CEO of Tesla and SpaceX\n2) Jeff Bezos - Founder and CEO of Amazon\n3) Mark Zuckerberg - Founder and CEO of Facebook\n4) Bill Gates - Co-founder of Microsoft\n5) Sundar Pichai - CEO of Google\n6) Satya Nadella - CEO of Microsoft\n7) Tim Cook - CEO of Apple\n8) Reed Hastings - Co-founder and CEO of Netflix\n9) Brian Chesky - Co-founder and CEO of Airbnb\n10) Jensen Huang - Co-founder and CEO of NVIDIA",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 0,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 0,
+    "confidence": 0.0,
+    "processing_time_seconds": 0.12266070000032414,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [],
+    "error": null
+  },
+  {
+    "sample_id": "167",
+    "query": "Come up with a list of character traits that describe the main protagonist of the story.",
+    "response": "As an AI language model, I do not know the main protagonist of your story. Thus, I can provide you with a generic list of character traits that you can refer to in creating the protagonist.\n\n- courageous\n- resilient\n- determined\n- resourceful\n- intelligent\n- compassionate\n- empathetic\n- reliable\n- honest\n- adventurous\n- ambitious\n- curious\n- independent\n- creative\n- humble\n- sincere\n- loyal\n- patient\n- optimistic",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 2,
+    "supported_fact_count": 1,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 1,
+    "confidence": 0.3603515625,
+    "processing_time_seconds": 24.050952600000073,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "As an AI language model, I do not know the main protagonist of your story.",
+        "label": "SUPPORTED",
+        "confidence": 0.720703125,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "Thus, I can provide you with a generic list of character traits that you can refer to in creating the protagonist.\n\n- courageous\n- resilient\n- determined\n- resourceful\n- intelligent\n- compassionate\n- empathetic\n- reliable\n- honest\n- adventurous\n- ambitious\n- curious\n- independent\n- creative\n- humble\n- sincere\n- loyal\n- patient\n- optimistic",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "458",
+    "query": "Identify an interesting fact about Saturn.",
+    "response": "Saturn has the most extensive and complex system of rings in the entire solar system, consisting of seven main rings and several fainter, less distinct ones. These rings are primarily composed of ice particles, ranging in size from tiny grains to large boulders, and can be up to 280,000 kilometers (174,000 miles) wide, while only a few meters thick.",
+    "expected_label": "hallucination",
+    "predicted_label": "hallucination",
+    "fact_count": 2,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 1,
+    "neutral_fact_count": 1,
+    "confidence": 0.916015625,
+    "processing_time_seconds": 47.87298809999993,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "Saturn has the most extensive and complex system of rings in the entire solar system, consisting of seven main rings and several fainter, less distinct ones.",
+        "label": "CONTRADICTED",
+        "confidence": 0.92138671875,
+        "reason": "At least one retrieved passage contradicts this fact."
+      },
+      {
+        "fact": "These rings are primarily composed of ice particles, ranging in size from tiny grains to large boulders.",
+        "label": "NEUTRAL",
+        "confidence": 0.91064453125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "2197",
+    "query": "Give me a context in which this idiom is applicable.\n\"To each their own\"",
+    "response": "A group of friends is discussing their favorite type of music. One of them likes pop, another likes rock, and another likes electronic. They start to argue about which genre is the best, but then one of them says \"to each their own\" and they agree to respect each other's music preferences.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "hallucination",
+    "fact_count": 4,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 1,
+    "neutral_fact_count": 3,
+    "confidence": 0.726318359375,
+    "processing_time_seconds": 68.54980409999962,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "A group of friends is discussing their favorite type of music.",
+        "label": "CONTRADICTED",
+        "confidence": 0.99609375,
+        "reason": "The strongest retrieved NLI result contradicts this fact."
+      },
+      {
+        "fact": "One of them likes pop, another likes rock, and another likes electronic.",
+        "label": "NEUTRAL",
+        "confidence": 0.912109375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "They start to argue about which genre is the best.",
+        "label": "NEUTRAL",
+        "confidence": 0.9970703125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "one of them says \"to each their own\" and they agree to respect each other's music preferences.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "3061",
+    "query": "Give an example of how the internet can be used to help the environment.",
+    "response": "One example of how the internet can be used to help the environment is by promoting virtual meetings instead of in-person meetings. This can reduce the amount of travel required for business and personal meetings, which in turn reduces carbon emissions from cars and planes. Additionally, individuals can use the internet to research and find tips on living a more environmentally-friendly lifestyle, such as ways to reduce household energy consumption and waste production. Online marketplaces and social media can also be used to promote the sale and exchange of second-hand and upcycled goods, reducing the need for new production and therefore reducing the environmental impact of manufacturing.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 4,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 4,
+    "confidence": 0.4918212890625,
+    "processing_time_seconds": 48.644286400000055,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "One example of how the internet can be used to help the environment is by promoting virtual meetings instead of in-person meetings.",
+        "label": "NEUTRAL",
+        "confidence": 0.97216796875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "This can reduce the amount of travel required for business and personal meetings, which in turn reduces carbon emissions from cars and planes.",
+        "label": "NEUTRAL",
+        "confidence": 0.9951171875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Additionally, individuals can use the internet to research and find tips on living a more environmentally-friendly lifestyle, such as ways to reduce household energy consumption and waste production.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Online marketplaces and social media can also be used to promote the sale and exchange of second-hand and upcycled goods, reducing the need for new production and therefore reducing the environmental impact of manufacturing.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "734",
+    "query": "Generate a representative example of how individuals should react to prejudice.",
+    "response": "Suppose a person hears derogatory comments about a particular ethnic or religious group. In this scenario, the individual should refrain from participating in such conversations and instead speak up and challenge such bigoted remarks. He/she can explain to the person why their statements are wrong and hurtful, and also educate them on cultural differences and the importance of respect for diversity. Additionally, the person can also report the incident to their organization's HR department or take other necessary actions as per the company's policy to prevent such incidents from occurring again. Ultimately, the individual should uphold inclusion and diversity values and do their part in creating a more inclusive and harmonious society.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 9,
+    "supported_fact_count": 1,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 8,
+    "confidence": 0.4977756076388889,
+    "processing_time_seconds": 118.65152519999992,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "Suppose a person hears derogatory comments about a particular ethnic or religious group.",
+        "label": "NEUTRAL",
+        "confidence": 0.91357421875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "the individual should refrain from participating in such conversations.",
+        "label": "NEUTRAL",
+        "confidence": 0.9599609375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "the individual speak up and challenge such bigoted remarks.",
+        "label": "NEUTRAL",
+        "confidence": 0.978515625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "He can explain to the person why their statements are wrong and hurtful.",
+        "label": "NEUTRAL",
+        "confidence": 0.78125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "He educate them on cultural differences and the importance of respect for diversity.",
+        "label": "SUPPORTED",
+        "confidence": 0.8466796875,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "the person can also report the incident to their organization's HR department.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "the person take other necessary actions as per the company's policy to prevent such incidents from occurring again.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "the individual should uphold inclusion and diversity values.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "the individual do their part in creating a more inclusive and harmonious society.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "3280",
+    "query": "Create a quick and easy way to store user data.",
+    "response": "One quick and easy way to store user data is to use a cloud-based service like Firebase. Firebase allows you to store and retrieve data in real-time using a simple API. You can store user data in a NoSQL database, with each user represented by a unique document. You can also enable user authentication using email/password, Google, or other popular providers to secure user data. This way, you can easily keep track of user information such as names, profiles, preferences, settings, and more. Firebase is free to use, and you only pay for additional services if needed, such as cloud storage or hosting. It is also scalable and reliable, making it a suitable solution for small and large applications.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 8,
+    "supported_fact_count": 2,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 6,
+    "confidence": 0.67669677734375,
+    "processing_time_seconds": 121.44982489999984,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "One quick and easy way to store user data is to use a cloud-based service like Firebase.",
+        "label": "NEUTRAL",
+        "confidence": 0.990234375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Firebase allows you to store and retrieve data in real-time using a simple API.",
+        "label": "SUPPORTED",
+        "confidence": 0.74072265625,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "You can store user data in a NoSQL database, with each user represented by a unique document.",
+        "label": "SUPPORTED",
+        "confidence": 0.94384765625,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "You can also enable user authentication using email/password, Google, or other popular providers to secure user data.",
+        "label": "NEUTRAL",
+        "confidence": 0.83935546875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "This way, you can easily keep track of user information such as names, profiles, preferences, settings, and more.",
+        "label": "NEUTRAL",
+        "confidence": 0.90087890625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Firebase is free to use.",
+        "label": "NEUTRAL",
+        "confidence": 0.99853515625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "you pay for additional services if needed, such as cloud storage or hosting.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "It is also scalable and reliable, making it a suitable solution for small and large applications.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "2026",
+    "query": "Write a detailed description about a person in 50 words\nPerson: Sarah",
+    "response": "Sarah is a 25-year-old businesswoman with a passion for corporate social responsibility. Her warm and approachable personality allows her to connect with people easily. In her free time, she can be found outdoors hiking or enjoying a good book. She is driven, compassionate, and always looking for ways to make a positive impact on the world.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 4,
+    "supported_fact_count": 1,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 3,
+    "confidence": 0.9757080078125,
+    "processing_time_seconds": 82.48305059999984,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "Sarah is a 25-year-old businesswoman with a passion for corporate social responsibility.",
+        "label": "NEUTRAL",
+        "confidence": 0.998046875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Her warm and approachable personality allows her to connect with people easily.",
+        "label": "NEUTRAL",
+        "confidence": 0.99658203125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "In her free time, she can be found outdoors hiking or enjoying a good book.",
+        "label": "NEUTRAL",
+        "confidence": 0.921875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "She is driven, compassionate, and always looking for ways to make a positive impact on the world.",
+        "label": "SUPPORTED",
+        "confidence": 0.986328125,
+        "reason": "At least one retrieved passage entails this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "912",
+    "query": "Describe an animal unique to your region in under 100 words.",
+    "response": "The kangaroo is a unique and iconic animal found in Australia. They are herbivorous marsupials with strong hind legs, which they use to hop at high speeds over long distances. Kangaroos are the largest living marsupials and can grow up to 2 metres tall. They are found in the wild across Australia and are a symbol of strength and endurance. By using their powerful legs and tail, they can cover up to 9m in a single hop. The kangaroo is an important part of Australian culture and is a beloved animal that draws tourists from all over the world.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 9,
+    "supported_fact_count": 3,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 6,
+    "confidence": 0.6982964409722222,
+    "processing_time_seconds": 160.0162336999997,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "The kangaroo is a unique and iconic animal found in Australia.",
+        "label": "NEUTRAL",
+        "confidence": 0.7919921875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "They are herbivorous marsupials with strong hind legs, which they use to hop at high speeds over long distances.",
+        "label": "SUPPORTED",
+        "confidence": 0.7646484375,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "Kangaroos are the largest living marsupials.",
+        "label": "NEUTRAL",
+        "confidence": 0.90283203125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Kangaroos grow up to 2 metres tall.",
+        "label": "SUPPORTED",
+        "confidence": 0.87744140625,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "They are found in the wild across Australia.",
+        "label": "NEUTRAL",
+        "confidence": 0.95703125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "They are a symbol of strength and endurance.",
+        "label": "NEUTRAL",
+        "confidence": 0.99658203125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "By using their powerful legs and tail, they can cover up to 9m in a single hop.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "The kangaroo is an important part of Australian culture.",
+        "label": "SUPPORTED",
+        "confidence": 0.994140625,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "The kangaroo is a beloved animal that draws tourists from all over the world.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "222",
+    "query": "I have a jar of coins and I think it is not the right number of coins. Can you help me count the coins?",
+    "response": "Sure! Can you give me some more information about the jar of coins? How big is the jar? What types of coins are in the jar? And roughly, how many coins do you think are inside?",
+    "expected_label": "hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 4,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 4,
+    "confidence": 0.8323974609375,
+    "processing_time_seconds": 96.08202690000007,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "Can you give me some more information about the jar of coins?",
+        "label": "NEUTRAL",
+        "confidence": 0.82568359375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "How big is the jar?",
+        "label": "NEUTRAL",
+        "confidence": 0.97412109375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "What types of coins are in the jar?",
+        "label": "NEUTRAL",
+        "confidence": 0.5830078125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "And roughly, how many coins do you think are inside?",
+        "label": "NEUTRAL",
+        "confidence": 0.94677734375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "237",
+    "query": "Research the latest news on the topic \u201cAI in healthcare\u201d and provide a summary with what you found in less than 100 words.",
+    "response": "AI in healthcare has had some major breakthroughs, including the detection of Alzheimer's 6 years before symptoms appear, and the creation of an AI system for predicting schizophrenia with an 93% accuracy rate. However, there are also concerns about the security and privacy of patient data and the potential for AI to exacerbate existing health disparities.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "hallucination",
+    "fact_count": 2,
+    "supported_fact_count": 1,
+    "contradicted_fact_count": 1,
+    "neutral_fact_count": 0,
+    "confidence": 0.893310546875,
+    "processing_time_seconds": 31.958040099999835,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "AI in healthcare has had some major breakthroughs, including the detection of Alzheimer's 6 years before symptoms appear, and the creation of an AI system for predicting schizophrenia with an 93% accuracy rate.",
+        "label": "CONTRADICTED",
+        "confidence": 0.95263671875,
+        "reason": "At least one retrieved passage contradicts this fact."
+      },
+      {
+        "fact": "However, there are also concerns about the security and privacy of patient data and the potential for AI to exacerbate existing health disparities.",
+        "label": "SUPPORTED",
+        "confidence": 0.833984375,
+        "reason": "At least one retrieved passage entails this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "3854",
+    "query": "Generate an opening sentence for a horror story that occurs in an abandoned castle.",
+    "response": "As the full moon rose higher into the night sky, the rusted gates of the abandoned castle screeched open, inviting us into its dark and ominous depths.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 1,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 1,
+    "confidence": 0.0,
+    "processing_time_seconds": 0.6038112999999612,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "As the full moon rose higher into the night sky, the rusted gates of the abandoned castle screeched open, inviting us into its dark and ominous depths.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "479",
+    "query": "Predict a future technological advancement.",
+    "response": "As an AI language model, I cannot predict the future with any certainty, but I can speculate. One technological advancement that could emerge in the future is the development of quantum computing. Unlike classical computing, which relies on bits, quantum computing uses quantum bits (qubits), which are capable of processing vast amounts of data simultaneously and solving complex problems in a fraction of the time it would take classical computing. The potential applications of quantum computing are vast, from solving complex scientific problems to revolutionizing cryptography and information security. While still in its early stages, quantum computing is a rapidly advancing field, and we can expect to see significant progress in the coming years.",
+    "expected_label": "hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 6,
+    "supported_fact_count": 3,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 3,
+    "confidence": 0.73095703125,
+    "processing_time_seconds": 108.13615929999969,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "I cannot predict the future with any certainty.",
+        "label": "SUPPORTED",
+        "confidence": 0.90087890625,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "One technological advancement that could emerge in the future is the development of quantum computing.",
+        "label": "NEUTRAL",
+        "confidence": 0.85009765625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Unlike classical computing, which relies on bits, quantum computing uses quantum bits (qubits), which are capable of processing vast amounts of data simultaneously and solving complex problems in a fraction of the time it would take classical computing.",
+        "label": "SUPPORTED",
+        "confidence": 0.94677734375,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "The potential applications of quantum computing are vast, from solving complex scientific problems to revolutionizing cryptography and information security.",
+        "label": "NEUTRAL",
+        "confidence": 0.873046875,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "quantum computing is a rapidly advancing field.",
+        "label": "SUPPORTED",
+        "confidence": 0.81494140625,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "we expect to see significant progress in the coming years.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "3203",
+    "query": "Create 3 creative metaphors to describe the sound of a thunder storm.",
+    "response": "1) The thunder was like a symphony of drums, each beat echoing through the sky.\n2) The sound of thunder was like the roar of a fierce lion, announcing its dominance.\n3) The thunderstorm sounded like a chaotic dance party in the clouds, with each bolt of lightning adding a burst of energy and excitement.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 3,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 3,
+    "confidence": 0.4962565104166667,
+    "processing_time_seconds": 25.12971770000013,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "1) The thunder was like a symphony of drums, each beat echoing through the sky.",
+        "label": "NEUTRAL",
+        "confidence": 0.5390625,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "2) The sound of thunder was like the roar of a fierce lion, announcing its dominance.",
+        "label": "NEUTRAL",
+        "confidence": 0.94970703125,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "The thunderstorm sounded like a chaotic dance party in the clouds, with each bolt of lightning adding a burst of energy and excitement.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "1682",
+    "query": "Identify the mistakes (if any) in the library management system design below.\nThe Library Management System should store the number of books available in the library and the activities occurring in the library. Additionally it should also store the details of the users who take the books.",
+    "response": "There are no clear mistakes in the design; however, there could be more specifications on what activities should be stored in the system and what details of users should be recorded.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 1,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 1,
+    "confidence": 0.93359375,
+    "processing_time_seconds": 24.765160599999945,
+    "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "There are no clear mistakes in the design; however, there could be more specifications on what activities should be stored in the system and what details of users should be recorded.",
+        "label": "NEUTRAL",
+        "confidence": 0.93359375,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  }
+]

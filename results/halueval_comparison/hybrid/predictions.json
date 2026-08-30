@@ -1,0 +1,472 @@
+[
+  {
+    "sample_id": "3684",
+    "query": "Create a 100-word description of a room",
+    "response": "The room was spacious and bright, with large windows letting in the warm sunlight of the late afternoon. Against one wall stood a sleek, modern sofa upholstered in rich cream leather, flanked by a matching armchair. In the center of the room, a low coffee table held a collection of art books and a vase of fresh-cut flowers. Above the table hung a stunning chandelier with glimmering crystals catching the light. On the opposite wall, a massive mahogany bookcase reached to the ceiling, filled with a collection of antique volumes and modern paperbacks alike. A plush wool rug lay beneath the furniture, and a collection of framed artwork adorned the walls, completing the room\u2019s air of elegance and comfort.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 8,
+    "supported_fact_count": 2,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 6,
+    "confidence": 0.34228515625,
+    "processing_time_seconds": 97.17580310000085,
+    "configuration": "hybrid",
+    "configuration_description": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "The room was spacious and bright, with large windows letting in the warm sunlight of the late afternoon.",
+        "label": "SUPPORTED",
+        "confidence": 0.90234375,
+        "hallucination": false,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "Against one wall stood a sleek, modern sofa upholstered in rich cream leather, flanked by a matching armchair.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "a low coffee table held a collection of art books.",
+        "label": "SUPPORTED",
+        "confidence": 0.8564453125,
+        "hallucination": false,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "a low coffee table held a vase of fresh-cut flowers.",
+        "label": "NEUTRAL",
+        "confidence": 0.9794921875,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Above the table hung a stunning chandelier with glimmering crystals catching the light.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "On the opposite wall, a massive mahogany bookcase reached to the ceiling, filled with a collection of antique volumes and modern paperbacks alike.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "A plush wool rug lay beneath the furniture.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "a collection of framed artwork adorned the walls, completing the room\u2019s air of elegance and comfort.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "1783",
+    "query": "Generate an example of a time when someone displayed initiative.",
+    "response": "One example of someone displaying initiative could be a student who noticed that their school's recycling program was lacking and decided to take action. The student researched the benefits of recycling, created a proposal outlining how to improve the program, and spoke to the school administration about implementing changes. They also took on the responsibility of educating their peers and promoting the new program throughout their school. Thanks to their initiative, the school was able to reduce its environmental impact and inspire others to do the same.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 4,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 4,
+    "confidence": 0.96044921875,
+    "processing_time_seconds": 115.82175289999941,
+    "configuration": "hybrid",
+    "configuration_description": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "One example of someone displaying initiative could be a student who noticed that their school's recycling program was lacking and decided to take action.",
+        "label": "NEUTRAL",
+        "confidence": 0.9482421875,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "The student researched the benefits of recycling, created a proposal outlining how to improve the program, and spoke to the school administration about implementing changes.",
+        "label": "NEUTRAL",
+        "confidence": 0.9111328125,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "They also took on the responsibility of educating their peers and promoting the new program throughout their school.",
+        "label": "NEUTRAL",
+        "confidence": 0.9970703125,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "Thanks to their initiative, the school was able to reduce its environmental impact and inspire others to do the same.",
+        "label": "NEUTRAL",
+        "confidence": 0.9853515625,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "552",
+    "query": "Design an algorithm to identify a person's age from their date of birth.",
+    "response": "1. Input the person's date of birth in the format of DD/MM/YYYY.\n2. Extract the year of birth from the input and assign it to a variable.\n3. Calculate the current year and assign it to another variable.\n4. Calculate the difference between the current year and the year of birth to obtain the age.\n5. Display the age as the output.\n\nExample code in Python:\n\n```\ndob = input(\"Enter date of birth in DD/MM/YYYY format: \")\nyear_of_birth = int(dob[-4:])\ncurrent_year = datetime.now().year\nage = current_year - year_of_birth\nprint(\"The person's age is:\", age)\n``` \n(Note: this code uses the Python datetime module to obtain the current year.)",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 1,
+    "supported_fact_count": 1,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 0,
+    "confidence": 0.80859375,
+    "processing_time_seconds": 28.6074449000007,
+    "configuration": "hybrid",
+    "configuration_description": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "current_year = datetime.now().year\nage = current_year - year_of_birth\nprint(\"The person's age is:\", age)\n``` \n(Note: this code uses the Python datetime module to obtain the current year.)",
+        "label": "SUPPORTED",
+        "confidence": 0.80859375,
+        "hallucination": false,
+        "reason": "At least one retrieved passage entails this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "2139",
+    "query": "Figure out why this code does not work\nconst fruits = [ 'apple', 'orange', 'banana' ]; \n\nfruits.forEach(x =>  console.log(`I love ${x}`) );",
+    "response": "This code should work correctly. It declares an array called \"fruits\" containing three strings, and then uses the \"forEach\" method to loop through each element in the array and log a message to the console using a template literal. The output should be:\n\nI love apple\nI love orange\nI love banana\n\nIf this code is not working, there may be an error elsewhere in the program, or the console may not be displaying the output for some reason. Some potential troubleshooting steps could include checking for syntax errors or incorrect variable names, using the console.log function to debug the code, or trying to run the code in a different environment or browser to see if the issue persists.",
+    "expected_label": "hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 5,
+    "supported_fact_count": 2,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 3,
+    "confidence": 0.66826171875,
+    "processing_time_seconds": 130.84798559999945,
+    "configuration": "hybrid",
+    "configuration_description": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "It declares an array called \"fruits\" containing three strings.",
+        "label": "SUPPORTED",
+        "confidence": 0.94287109375,
+        "hallucination": false,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "It uses the \"forEach\" method to loop through each element in the array and log a message to the console using a template literal.",
+        "label": "NEUTRAL",
+        "confidence": 0.50830078125,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "The output should be:\n\nI love apple\nI love orange\nI love banana",
+        "label": "NEUTRAL",
+        "confidence": 0.97216796875,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "If this code is not working, there may be an error elsewhere in the program, or the console may not be displaying the output for some reason.",
+        "label": "SUPPORTED",
+        "confidence": 0.91796875,
+        "hallucination": false,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "Some potential troubleshooting steps could include checking for syntax errors or incorrect variable names, using the console.log function to debug the code, or trying to run the code in a different environment or browser to see if the issue persists.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "1964",
+    "query": "Add an example to illustrate the meaning of the idiom \"a piece of cake\".",
+    "response": "When we asked him to solve that complicated math problem, he said it was a piece of cake and solved it in minutes.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 1,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 1,
+    "confidence": 0.6171875,
+    "processing_time_seconds": 38.28396380000049,
+    "configuration": "hybrid",
+    "configuration_description": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "When we asked him to solve that complicated math problem, he said it was a piece of cake and solved it in minutes.",
+        "label": "NEUTRAL",
+        "confidence": 0.6171875,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "3001",
+    "query": "Find 3 quotes from 'Harry Potter and the Sorcerer's Stone'.",
+    "response": "1. \"It does not do to dwell on dreams and forget to live.\" - Albus Dumbledore \n\n2. \"It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.\" - Albus Dumbledore \n\n3. \"To the well-organized mind, death is but the next great adventure.\" - Albus Dumbledore",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 3,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 3,
+    "confidence": 0.0,
+    "processing_time_seconds": 2.0966676999996707,
+    "configuration": "hybrid",
+    "configuration_description": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "\"It does not do to dwell on dreams and forget to live.\" - Albus Dumbledore",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "\"It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.\" - Albus Dumbledore",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "\"To the well-organized mind, death is but the next great adventure.\" - Albus Dumbledore",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "1601",
+    "query": "Create an analogy that illustrates the difference between a programming language and an API",
+    "response": "A programming language is like a toolbox filled with different types of tools, each with its own specific function. Each tool can be used to create something new or modify existing objects, much like how a programming language can be used to write code to perform specific tasks.\n\nOn the other hand, an API is like a pre-built assembly that uses a specific set of tools from the programming language toolbox. This assembly allows you to easily accomplish a specific task without having to write all the code from scratch. Just like how you can use an assembly to speed up the building process, an API can be used to speed up the development process, making it easier and faster to create complex applications.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 5,
+    "supported_fact_count": 5,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 0,
+    "confidence": 0.89013671875,
+    "processing_time_seconds": 167.7769406999996,
+    "configuration": "hybrid",
+    "configuration_description": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "A programming language is like a toolbox filled with different types of tools, each with its own specific function.",
+        "label": "SUPPORTED",
+        "confidence": 0.8876953125,
+        "hallucination": false,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "Each tool can be used to create something new or modify existing objects, much like how a programming language can be used to write code to perform specific tasks.",
+        "label": "SUPPORTED",
+        "confidence": 0.90576171875,
+        "hallucination": false,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "On the other hand, an API is like a pre-built assembly that uses a specific set of tools from the programming language toolbox.",
+        "label": "SUPPORTED",
+        "confidence": 0.94189453125,
+        "hallucination": false,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "This assembly allows you to easily accomplish a specific task without having to write all the code from scratch.",
+        "label": "SUPPORTED",
+        "confidence": 0.8388671875,
+        "hallucination": false,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "Just like how you can use an assembly to speed up the building process, an API can be used to speed up the development process, making it easier and faster to create complex applications.",
+        "label": "SUPPORTED",
+        "confidence": 0.87646484375,
+        "hallucination": false,
+        "reason": "At least one retrieved passage entails this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "488",
+    "query": "Predict the values of x and y in the following equation: 9x + 4y = 36.",
+    "response": "There are infinitely many (x, y) pairs that could satisfy this equation, so without more information it is not possible to predict specific values for x and y. \n\nHowever, we can rearrange the equation to the slope-intercept form y = mx + b, where m is the slope and b is the y-intercept:\n\n9x + 4y = 36\n4y = -9x + 36   (subtract 9x from both sides)\ny = (-9/4)x + 9  (divide both sides by 4)\n\nFrom this form, we can see that the slope of the line is -9/4, meaning that for every increase in x by 4 units, y decreases by 9 units. The y-intercept is 9, meaning that the line passes through the point (0,9) on the y-axis. With this information, we can graph the line and determine various (x,y) pairs that satisfy the equation.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 7,
+    "supported_fact_count": 4,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 3,
+    "confidence": 0.5470145089285714,
+    "processing_time_seconds": 171.40827619999982,
+    "configuration": "hybrid",
+    "configuration_description": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "There are infinitely many (x, y) pairs that could satisfy this equation, so without more information it is not possible to predict specific values for x and y.",
+        "label": "NEUTRAL",
+        "confidence": 0.5771484375,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "However, we can rearrange the equation to the slope-intercept form y = mx + b, where m is the slope and b is the y-intercept:\n\n9x + 4y = 36\n4y = -9x + 36   (subtract 9x from both sides)",
+        "label": "SUPPORTED",
+        "confidence": 0.7451171875,
+        "hallucination": false,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "From this form, we can see that the slope of the line is -9/4, meaning that for every increase in x by 4 units, y decreases by 9 units.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "The y-intercept is 9, meaning that the line passes through the point (0,9) on the y-axis.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "we can graph the line.",
+        "label": "SUPPORTED",
+        "confidence": 0.91455078125,
+        "hallucination": false,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "we determine various (x,y).",
+        "label": "SUPPORTED",
+        "confidence": 0.73193359375,
+        "hallucination": false,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "we pairs that satisfy the equation.",
+        "label": "SUPPORTED",
+        "confidence": 0.8603515625,
+        "hallucination": false,
+        "reason": "At least one retrieved passage entails this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "3271",
+    "query": "Analyze the given poem and rewrite it with a new title and an altered tone.\nTitle: \"Lost\"\n\nI stare out into the void,\nSearching for a life I never employed.\n\nMy path is a long, sad descent,\nWords mean nothing as I relent.",
+    "response": "Rewritten Poem:\n\nTitle: \"On the Search for Purpose\"\n\nWith a hesitant gaze and a curious mind,\nI set out to find what I've yet to define.\n\nA journey with twists and turns on every bend,\nBut each step taken, I gain new friend.\n\nThe words matter, they have the power,\nTo ignite hope in the darkest hour.\n\nNo longer do I feel lost and alone,\nMy purpose awaits, a journey to be shown.",
+    "expected_label": "hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 4,
+    "supported_fact_count": 0,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 4,
+    "confidence": 0.6597900390625,
+    "processing_time_seconds": 104.65265290000025,
+    "configuration": "hybrid",
+    "configuration_description": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "Title: \"On the Search for Purpose\"\n\nWith a hesitant gaze and a curious mind,\nI set out to find what I've yet to define.",
+        "label": "NEUTRAL",
+        "confidence": 0.0,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "A journey with twists and turns on every bend,\nBut each step taken, I gain new friend.",
+        "label": "NEUTRAL",
+        "confidence": 0.83154296875,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "The words matter, they have the power,\nTo ignite hope in the darkest hour.",
+        "label": "NEUTRAL",
+        "confidence": 0.8330078125,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      },
+      {
+        "fact": "No longer do I feel lost and alone,\nMy purpose awaits, a journey to be shown.",
+        "label": "NEUTRAL",
+        "confidence": 0.974609375,
+        "hallucination": false,
+        "reason": "Retrieved evidence is insufficient to support or contradict this fact."
+      }
+    ],
+    "error": null
+  },
+  {
+    "sample_id": "4429",
+    "query": "Find the mistakes in the following table\nCountry | Capital | Population\nRussia | Moscow | 145.93 million\nFrance | London | 67.41 million",
+    "response": "Mistakes:\n1. The capital of France is not London, it is Paris.\n2. The population of London is not listed correctly, as it is a city and not a country.\nCorrected table:\nCountry | Capital | Population\nRussia | Moscow | 145.93 million\nFrance | Paris | 67.41 million",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 2,
+    "supported_fact_count": 2,
+    "contradicted_fact_count": 0,
+    "neutral_fact_count": 0,
+    "confidence": 0.90283203125,
+    "processing_time_seconds": 72.02907159999995,
+    "configuration": "hybrid",
+    "configuration_description": "hybrid local knowledge base + Wikipedia fallback",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "verification": [
+      {
+        "fact": "The capital of France is not London, it is Paris.",
+        "label": "SUPPORTED",
+        "confidence": 0.99560546875,
+        "hallucination": false,
+        "reason": "At least one retrieved passage entails this fact."
+      },
+      {
+        "fact": "The population of London is not listed correctly, as it is a city and not a country.",
+        "label": "SUPPORTED",
+        "confidence": 0.81005859375,
+        "hallucination": false,
+        "reason": "At least one retrieved passage entails this fact."
+      }
+    ],
+    "error": null
+  }
+]

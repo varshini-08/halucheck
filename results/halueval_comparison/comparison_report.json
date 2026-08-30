@@ -1,0 +1,43 @@
+{
+  "dataset": "data/halu_eval/general_data.json",
+  "samples": 10,
+  "seed": 42,
+  "sample_ids": [
+    "3684",
+    "1783",
+    "552",
+    "2139",
+    "1964",
+    "3001",
+    "1601",
+    "488",
+    "3271",
+    "4429"
+  ],
+  "table": [
+    {
+      "configuration": "nli_only",
+      "accuracy": 0.7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "average_processing_time_seconds": 9.359480429999712
+    },
+    {
+      "configuration": "local_kb",
+      "accuracy": 0.8,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1_score": 0.5,
+      "average_processing_time_seconds": 8.187292880000495
+    },
+    {
+      "configuration": "hybrid",
+      "accuracy": 0.8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "average_processing_time_seconds": 92.87005594000001
+    }
+  ]
+}

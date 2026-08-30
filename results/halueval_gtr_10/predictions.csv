@@ -1,0 +1,79 @@
+sample_id,query,response,expected_label,predicted_label,fact_count,evidence_count,error,retrieval_mode,timings,processing_time_seconds,retrieval_model,embedding_dimension
+3684,Create a 100-word description of a room,"The room was spacious and bright, with large windows letting in the warm sunlight of the late afternoon. Against one wall stood a sleek, modern sofa upholstered in rich cream leather, flanked by a matching armchair. In the center of the room, a low coffee table held a collection of art books and a vase of fresh-cut flowers. Above the table hung a stunning chandelier with glimmering crystals catching the light. On the opposite wall, a massive mahogany bookcase reached to the ceiling, filled with a collection of antique volumes and modern paperbacks alike. A plush wool rug lay beneath the furniture, and a collection of framed artwork adorned the walls, completing the room’s air of elegance and comfort.",no_hallucination,no_hallucination,8,24,,paper/GTR,"{""extraction_seconds"": 0.5951595999999881, ""entity_seconds"": 1.1800000038419967e-05, ""local_faiss_seconds"": 0.14618829999994887, ""wikipedia_search_seconds"": 0.0, ""wikipedia_article_seconds"": 0.0, ""wikipedia_chunk_ranking_seconds"": 0.0, ""retrieval_seconds"": 7.914551900000106, ""verification_seconds"": 12.91627480000011, ""nli_load_seconds"": 0.8786207999999078, ""nli_inference_seconds"": 12.037460899999815, ""total_seconds"": 21.42708749999997}",21.427122499999996,sentence-transformers/gtr-t5-base,768
+1783,Generate an example of a time when someone displayed initiative.,"One example of someone displaying initiative could be a student who noticed that their school's recycling program was lacking and decided to take action. The student researched the benefits of recycling, created a proposal outlining how to improve the program, and spoke to the school administration about implementing changes. They also took on the responsibility of educating their peers and promoting the new program throughout their school. Thanks to their initiative, the school was able to reduce its environmental impact and inspire others to do the same.",no_hallucination,no_hallucination,4,12,,paper/GTR,"{""extraction_seconds"": 0.2698104000000967, ""entity_seconds"": 1.3200000012147939e-05, ""local_faiss_seconds"": 0.13303580000001602, ""wikipedia_search_seconds"": 0.0, ""wikipedia_article_seconds"": 0.0, ""wikipedia_chunk_ranking_seconds"": 0.0, ""retrieval_seconds"": 0.7185941999998704, ""verification_seconds"": 5.892511199999944, ""nli_load_seconds"": 4.399999852466863e-06, ""nli_inference_seconds"": 5.892345700000078, ""total_seconds"": 6.882069500000171}",6.88212969999995,sentence-transformers/gtr-t5-base,768
+552,Design an algorithm to identify a person's age from their date of birth.,"1. Input the person's date of birth in the format of DD/MM/YYYY.
+2. Extract the year of birth from the input and assign it to a variable.
+3. Calculate the current year and assign it to another variable.
+4. Calculate the difference between the current year and the year of birth to obtain the age.
+5. Display the age as the output.
+
+Example code in Python:
+
+```
+dob = input(""Enter date of birth in DD/MM/YYYY format: "")
+year_of_birth = int(dob[-4:])
+current_year = datetime.now().year
+age = current_year - year_of_birth
+print(""The person's age is:"", age)
+``` 
+(Note: this code uses the Python datetime module to obtain the current year.)",no_hallucination,no_hallucination,1,3,,paper/GTR,"{""extraction_seconds"": 0.23956449999991491, ""entity_seconds"": 1.810000003388268e-05, ""local_faiss_seconds"": 0.3742718999999397, ""wikipedia_search_seconds"": 0.0, ""wikipedia_article_seconds"": 0.0, ""wikipedia_chunk_ranking_seconds"": 0.0, ""retrieval_seconds"": 0.3743128000000979, ""verification_seconds"": 2.9391266000000087, ""nli_load_seconds"": 3.3999999686784577e-06, ""nli_inference_seconds"": 2.93902839999987, ""total_seconds"": 3.5537546999998995}",3.553789100000131,sentence-transformers/gtr-t5-base,768
+2139,"Figure out why this code does not work
+const fruits = [ 'apple', 'orange', 'banana' ]; 
+
+fruits.forEach(x =>  console.log(`I love ${x}`) );","This code should work correctly. It declares an array called ""fruits"" containing three strings, and then uses the ""forEach"" method to loop through each element in the array and log a message to the console using a template literal. The output should be:
+
+I love apple
+I love orange
+I love banana
+
+If this code is not working, there may be an error elsewhere in the program, or the console may not be displaying the output for some reason. Some potential troubleshooting steps could include checking for syntax errors or incorrect variable names, using the console.log function to debug the code, or trying to run the code in a different environment or browser to see if the issue persists.",hallucination,no_hallucination,5,15,,paper/GTR,"{""extraction_seconds"": 0.3596511000000646, ""entity_seconds"": 6.199999916134402e-06, ""local_faiss_seconds"": 0.3314958999999362, ""wikipedia_search_seconds"": 0.0, ""wikipedia_article_seconds"": 0.0, ""wikipedia_chunk_ranking_seconds"": 0.0, ""retrieval_seconds"": 1.0029526999999234, ""verification_seconds"": 9.449070099999972, ""nli_load_seconds"": 2.4000000848900527e-06, ""nli_inference_seconds"": 9.44880779999994, ""total_seconds"": 10.812469800000144}",10.812508099999832,sentence-transformers/gtr-t5-base,768
+1964,"Add an example to illustrate the meaning of the idiom ""a piece of cake"".","When we asked him to solve that complicated math problem, he said it was a piece of cake and solved it in minutes.",no_hallucination,no_hallucination,1,3,,paper/GTR,"{""extraction_seconds"": 0.0685252999999193, ""entity_seconds"": 4.499999931795173e-06, ""local_faiss_seconds"": 0.1665042000001904, ""wikipedia_search_seconds"": 0.0, ""wikipedia_article_seconds"": 0.0, ""wikipedia_chunk_ranking_seconds"": 0.0, ""retrieval_seconds"": 0.16654250000010506, ""verification_seconds"": 1.7923898999999892, ""nli_load_seconds"": 2.3999998575163772e-06, ""nli_inference_seconds"": 1.7923147999999856, ""total_seconds"": 2.028381400000171}",2.028417900000022,sentence-transformers/gtr-t5-base,768
+3001,Find 3 quotes from 'Harry Potter and the Sorcerer's Stone'.,"1. ""It does not do to dwell on dreams and forget to live."" - Albus Dumbledore 
+
+2. ""It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends."" - Albus Dumbledore 
+
+3. ""To the well-organized mind, death is but the next great adventure."" - Albus Dumbledore",no_hallucination,no_hallucination,3,9,,paper/GTR,"{""extraction_seconds"": 0.1901832999999442, ""entity_seconds"": 5.0999999530176865e-06, ""local_faiss_seconds"": 0.1500791000000845, ""wikipedia_search_seconds"": 0.0, ""wikipedia_article_seconds"": 0.0, ""wikipedia_chunk_ranking_seconds"": 0.0, ""retrieval_seconds"": 0.541888199999903, ""verification_seconds"": 4.804426899999953, ""nli_load_seconds"": 2.300000005561742e-06, ""nli_inference_seconds"": 4.804293400000006, ""total_seconds"": 5.537267700000029}",5.53729670000007,sentence-transformers/gtr-t5-base,768
+1601,Create an analogy that illustrates the difference between a programming language and an API,"A programming language is like a toolbox filled with different types of tools, each with its own specific function. Each tool can be used to create something new or modify existing objects, much like how a programming language can be used to write code to perform specific tasks.
+
+On the other hand, an API is like a pre-built assembly that uses a specific set of tools from the programming language toolbox. This assembly allows you to easily accomplish a specific task without having to write all the code from scratch. Just like how you can use an assembly to speed up the building process, an API can be used to speed up the development process, making it easier and faster to create complex applications.",no_hallucination,no_hallucination,5,15,,paper/GTR,"{""extraction_seconds"": 0.34333300000002964, ""entity_seconds"": 5.60999999379419e-05, ""local_faiss_seconds"": 0.24019859999998516, ""wikipedia_search_seconds"": 0.0, ""wikipedia_article_seconds"": 0.0, ""wikipedia_chunk_ranking_seconds"": 0.0, ""retrieval_seconds"": 1.0138200999999754, ""verification_seconds"": 8.749598699999979, ""nli_load_seconds"": 3.6999999792897142e-06, ""nli_inference_seconds"": 8.749404299999924, ""total_seconds"": 10.108069999999998}",10.108114099999966,sentence-transformers/gtr-t5-base,768
+488,Predict the values of x and y in the following equation: 9x + 4y = 36.,"There are infinitely many (x, y) pairs that could satisfy this equation, so without more information it is not possible to predict specific values for x and y. 
+
+However, we can rearrange the equation to the slope-intercept form y = mx + b, where m is the slope and b is the y-intercept:
+
+9x + 4y = 36
+4y = -9x + 36   (subtract 9x from both sides)
+y = (-9/4)x + 9  (divide both sides by 4)
+
+From this form, we can see that the slope of the line is -9/4, meaning that for every increase in x by 4 units, y decreases by 9 units. The y-intercept is 9, meaning that the line passes through the point (0,9) on the y-axis. With this information, we can graph the line and determine various (x,y) pairs that satisfy the equation.",no_hallucination,hallucination,7,21,,paper/GTR,"{""extraction_seconds"": 0.5834136999999373, ""entity_seconds"": 2.130000007127819e-05, ""local_faiss_seconds"": 0.056895200000099067, ""wikipedia_search_seconds"": 0.0, ""wikipedia_article_seconds"": 0.0, ""wikipedia_chunk_ranking_seconds"": 0.0, ""retrieval_seconds"": 1.3714594000000488, ""verification_seconds"": 15.52616409999996, ""nli_load_seconds"": 3.3000001167238224e-06, ""nli_inference_seconds"": 15.525966299999936, ""total_seconds"": 17.482336000000032}",17.482390099999975,sentence-transformers/gtr-t5-base,768
+3271,"Analyze the given poem and rewrite it with a new title and an altered tone.
+Title: ""Lost""
+
+I stare out into the void,
+Searching for a life I never employed.
+
+My path is a long, sad descent,
+Words mean nothing as I relent.","Rewritten Poem:
+
+Title: ""On the Search for Purpose""
+
+With a hesitant gaze and a curious mind,
+I set out to find what I've yet to define.
+
+A journey with twists and turns on every bend,
+But each step taken, I gain new friend.
+
+The words matter, they have the power,
+To ignite hope in the darkest hour.
+
+No longer do I feel lost and alone,
+My purpose awaits, a journey to be shown.",hallucination,no_hallucination,4,12,,paper/GTR,"{""extraction_seconds"": 0.2754222999999456, ""entity_seconds"": 6.000000212225132e-06, ""local_faiss_seconds"": 0.13483820000010383, ""wikipedia_search_seconds"": 0.0, ""wikipedia_article_seconds"": 0.0, ""wikipedia_chunk_ranking_seconds"": 0.0, ""retrieval_seconds"": 0.724623400000155, ""verification_seconds"": 6.104302199999893, ""nli_load_seconds"": 2.1999999262334313e-06, ""nli_inference_seconds"": 6.10408550000011, ""total_seconds"": 7.105395700000145}",7.1054554999998345,sentence-transformers/gtr-t5-base,768
+4429,"Find the mistakes in the following table
+Country | Capital | Population
+Russia | Moscow | 145.93 million
+France | London | 67.41 million","Mistakes:
+1. The capital of France is not London, it is Paris.
+2. The population of London is not listed correctly, as it is a city and not a country.
+Corrected table:
+Country | Capital | Population
+Russia | Moscow | 145.93 million
+France | Paris | 67.41 million",no_hallucination,no_hallucination,2,6,,paper/GTR,"{""extraction_seconds"": 0.18111399999997957, ""entity_seconds"": 0.0001019000001178938, ""local_faiss_seconds"": 0.14515490000007958, ""wikipedia_search_seconds"": 0.0, ""wikipedia_article_seconds"": 0.0, ""wikipedia_chunk_ranking_seconds"": 0.0, ""retrieval_seconds"": 0.2405205999998543, ""verification_seconds"": 3.244752500000004, ""nli_load_seconds"": 2.8999997994105797e-06, ""nli_inference_seconds"": 3.2446263000001636, ""total_seconds"": 3.6673783999999614}",3.667418100000077,sentence-transformers/gtr-t5-base,768

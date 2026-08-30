@@ -1,0 +1,7 @@
+﻿{
+  "status": "validated_by_existing_tests_and_artifacts",
+  "production_index": "vector_db/vector.index",
+  "paper_index": "vector_db/gtr_base.index",
+  "paper_index_exists": false,
+  "checks": ["FAISS persistence", "metadata/index corruption handling", "top-k ranking", "empty fact validation", "Wikipedia fallback behavior", "retrieval caching"]
+}

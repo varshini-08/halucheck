@@ -1,0 +1,5 @@
+{
+  "status": "available_from_production_timing_hooks",
+  "components": ["local_faiss_seconds", "wikipedia_search_seconds", "wikipedia_article_seconds", "wikipedia_chunk_ranking_seconds", "total_evidence_retrieval_seconds"],
+  "gtr_comparison": "NOT EXECUTED: GTR index unavailable"
+}

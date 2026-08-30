@@ -1,0 +1,13 @@
+{
+  "model": "sentence-transformers/gtr-t5-base",
+  "retrieval_mode": "paper/GTR",
+  "embedding_dimension": 768,
+  "query": "Paris is the capital of France.",
+  "model_load_seconds": 6.932665000000043,
+  "embedding_seconds": 0.15973359999998138,
+  "faiss_retrieval_seconds": 0.00018580000005385955,
+  "total_retrieval_seconds": 0.00011849999998503336,
+  "full_verification_seconds": null,
+  "result_count": 2,
+  "offline": true
+}

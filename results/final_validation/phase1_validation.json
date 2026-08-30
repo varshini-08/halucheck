@@ -1,0 +1,51 @@
+{
+  "simple": {
+    "fact_count": 1,
+    "facts": [
+      "Paris is the capital of France."
+    ],
+    "seconds": 0.039281400000618305
+  },
+  "objects": {
+    "fact_count": 2,
+    "facts": [
+      "A table held a book.",
+      "A table held a vase of fresh-cut flowers."
+    ],
+    "seconds": 0.07503399999950489
+  },
+  "dates_numbers": {
+    "fact_count": 1,
+    "facts": [
+      "Ada Lovelace wrote notes in 1843."
+    ],
+    "seconds": 0.035637999999380554
+  },
+  "entities": {
+    "fact_count": 1,
+    "facts": [
+      "Apple was founded by Steve Jobs."
+    ],
+    "seconds": 0.03546049999931711
+  },
+  "numbered": {
+    "fact_count": 2,
+    "facts": [
+      "Mercury is a planet.",
+      "Venus is a planet."
+    ],
+    "seconds": 0.06798699999853852
+  },
+  "modifiers": {
+    "fact_count": 1,
+    "facts": [
+      "A cream leather sofa stood beside a mahogany bookcase."
+    ],
+    "seconds": 0.037745300000096904
+  },
+  "empty": {
+    "fact_count": 0,
+    "facts": [],
+    "seconds": 1.0000003385357559e-06
+  }
+}

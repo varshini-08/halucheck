@@ -1,0 +1,183 @@
+{
+  "dataset": "data/halu_eval/general_data.json",
+  "samples": 10,
+  "seed": 42,
+  "sample_ids": [
+    "3684",
+    "1783",
+    "552",
+    "2139",
+    "1964",
+    "3001",
+    "1601",
+    "488",
+    "3271",
+    "4429"
+  ],
+  "configurations": {
+    "nli_only": {
+      "metrics": {
+        "total_samples": 10,
+        "correct_predictions": 7,
+        "incorrect_predictions": 3,
+        "accuracy": 0.7,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "tp": 0,
+        "tn": 7,
+        "fp": 1,
+        "fn": 2,
+        "confusion_matrix": {
+          "labels": [
+            "no_hallucination",
+            "hallucination"
+          ],
+          "matrix": {
+            "no_hallucination": {
+              "no_hallucination": 7,
+              "hallucination": 1
+            },
+            "hallucination": {
+              "no_hallucination": 2,
+              "hallucination": 0
+            }
+          }
+        },
+        "evaluated_samples": 10,
+        "failed_samples": 0,
+        "average_processing_time_seconds": 9.359480429999712
+      },
+      "sample_ids": [
+        "3684",
+        "1783",
+        "552",
+        "2139",
+        "1964",
+        "3001",
+        "1601",
+        "488",
+        "3271",
+        "4429"
+      ]
+    },
+    "local_kb": {
+      "metrics": {
+        "total_samples": 10,
+        "correct_predictions": 8,
+        "incorrect_predictions": 2,
+        "accuracy": 0.8,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1_score": 0.5,
+        "tp": 1,
+        "tn": 7,
+        "fp": 1,
+        "fn": 1,
+        "confusion_matrix": {
+          "labels": [
+            "no_hallucination",
+            "hallucination"
+          ],
+          "matrix": {
+            "no_hallucination": {
+              "no_hallucination": 7,
+              "hallucination": 1
+            },
+            "hallucination": {
+              "no_hallucination": 1,
+              "hallucination": 1
+            }
+          }
+        },
+        "evaluated_samples": 10,
+        "failed_samples": 0,
+        "average_processing_time_seconds": 8.187292880000495
+      },
+      "sample_ids": [
+        "3684",
+        "1783",
+        "552",
+        "2139",
+        "1964",
+        "3001",
+        "1601",
+        "488",
+        "3271",
+        "4429"
+      ]
+    },
+    "hybrid": {
+      "metrics": {
+        "total_samples": 10,
+        "correct_predictions": 8,
+        "incorrect_predictions": 2,
+        "accuracy": 0.8,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "tp": 0,
+        "tn": 8,
+        "fp": 0,
+        "fn": 2,
+        "confusion_matrix": {
+          "labels": [
+            "no_hallucination",
+            "hallucination"
+          ],
+          "matrix": {
+            "no_hallucination": {
+              "no_hallucination": 8,
+              "hallucination": 0
+            },
+            "hallucination": {
+              "no_hallucination": 2,
+              "hallucination": 0
+            }
+          }
+        },
+        "evaluated_samples": 10,
+        "failed_samples": 0,
+        "average_processing_time_seconds": 92.87005594000001
+      },
+      "sample_ids": [
+        "3684",
+        "1783",
+        "552",
+        "2139",
+        "1964",
+        "3001",
+        "1601",
+        "488",
+        "3271",
+        "4429"
+      ]
+    }
+  },
+  "table": [
+    {
+      "configuration": "nli_only",
+      "accuracy": 0.7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "average_processing_time_seconds": 9.359480429999712
+    },
+    {
+      "configuration": "local_kb",
+      "accuracy": 0.8,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1_score": 0.5,
+      "average_processing_time_seconds": 8.187292880000495
+    },
+    {
+      "configuration": "hybrid",
+      "accuracy": 0.8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "average_processing_time_seconds": 92.87005594000001
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "checks": [
+    {
+      "name": "Groq",
+      "module": "groq",
+      "available": true,
+      "version": "1.5.0",
+      "critical": true,
+      "configured": "openai/gpt-oss-20b",
+      "functional_test": "import only; live service/model test not invoked",
+      "error": null
+    },
+    {
+      "name": "spaCy",
+      "module": "spacy",
+      "available": true,
+      "version": "3.8.14",
+      "critical": true,
+      "configured": "en_core_web_sm",
+      "functional_test": "import only; live service/model test not invoked",
+      "error": null
+    },
+    {
+      "name": "RapidFuzz",
+      "module": "rapidfuzz",
+      "available": true,
+      "version": "3.14.5",
+      "critical": true,
+      "configured": null,
+      "functional_test": "import only; live service/model test not invoked",
+      "error": null
+    },
+    {
+      "name": "SentenceTransformers",
+      "module": "sentence_transformers",
+      "available": true,
+      "version": "5.3.0",
+      "critical": true,
+      "configured": "all-MiniLM-L6-v2",
+      "functional_test": "import only; live service/model test not invoked",
+      "error": null
+    },
+    {
+      "name": "FAISS",
+      "module": "faiss",
+      "available": true,
+      "version": "1.13.2",
+      "critical": true,
+      "configured": null,
+      "functional_test": "import only; live service/model test not invoked",
+      "error": null
+    },
+    {
+      "name": "Requests",
+      "module": "requests",
+      "available": true,
+      "version": "2.32.3",
+      "critical": true,
+      "configured": null,
+      "functional_test": "import only; live service/model test not invoked",
+      "error": null
+    },
+    {
+      "name": "Transformers",
+      "module": "transformers",
+      "available": true,
+      "version": "5.3.0",
+      "critical": true,
+      "configured": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+      "functional_test": "import only; live service/model test not invoked",
+      "error": null
+    },
+    {
+      "name": "Torch",
+      "module": "torch",
+      "available": true,
+      "version": "2.10.0+cpu",
+      "critical": true,
+      "configured": null,
+      "functional_test": "import only; live service/model test not invoked",
+      "error": null
+    },
+    {
+      "name": "Streamlit",
+      "module": "streamlit",
+      "available": true,
+      "version": "1.59.2",
+      "critical": true,
+      "configured": null,
+      "functional_test": "import only; live service/model test not invoked",
+      "error": null
+    }
+  ],
+  "production_retrieval_model": "all-MiniLM-L6-v2",
+  "optional_paper_retrieval_model": "sentence-transformers/gtr-t5-base",
+  "groq_key_configured": false,
+  "external_live_calls": false
+}

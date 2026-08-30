@@ -1,0 +1,112 @@
+[
+  {
+    "sample_id": "3684",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "latency_seconds": 21.28597549999995,
+    "raw_response": "NO_HALLUCINATION",
+    "error": "Gemini request failed: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "retry_attempts": 2
+  },
+  {
+    "sample_id": "1783",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "expected_label": "no_hallucination",
+    "predicted_label": "error",
+    "latency_seconds": 16.588297899999816,
+    "raw_response": "",
+    "error": "Gemini request failed: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "retry_attempts": 3
+  },
+  {
+    "sample_id": "552",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "expected_label": "no_hallucination",
+    "predicted_label": "error",
+    "latency_seconds": 15.056220999999823,
+    "raw_response": "",
+    "error": "Gemini request failed: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "retry_attempts": 3
+  },
+  {
+    "sample_id": "2139",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "expected_label": "hallucination",
+    "predicted_label": "error",
+    "latency_seconds": 15.467720999999983,
+    "raw_response": "",
+    "error": "Gemini request failed: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "retry_attempts": 3
+  },
+  {
+    "sample_id": "1964",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "expected_label": "no_hallucination",
+    "predicted_label": "error",
+    "latency_seconds": 15.376108400000703,
+    "raw_response": "",
+    "error": "Gemini request failed: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "retry_attempts": 3
+  },
+  {
+    "sample_id": "3001",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "expected_label": "no_hallucination",
+    "predicted_label": "error",
+    "latency_seconds": 15.253666800000246,
+    "raw_response": "",
+    "error": "Gemini request failed: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "retry_attempts": 3
+  },
+  {
+    "sample_id": "1601",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "expected_label": "no_hallucination",
+    "predicted_label": "error",
+    "latency_seconds": 15.678820099999939,
+    "raw_response": "",
+    "error": "Gemini request failed: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "retry_attempts": 3
+  },
+  {
+    "sample_id": "488",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "expected_label": "no_hallucination",
+    "predicted_label": "error",
+    "latency_seconds": 14.916847800000141,
+    "raw_response": "",
+    "error": "Gemini request failed: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "retry_attempts": 3
+  },
+  {
+    "sample_id": "3271",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "expected_label": "hallucination",
+    "predicted_label": "error",
+    "latency_seconds": 15.482141099999353,
+    "raw_response": "",
+    "error": "Gemini request failed: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "retry_attempts": 3
+  },
+  {
+    "sample_id": "4429",
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "expected_label": "no_hallucination",
+    "predicted_label": "error",
+    "latency_seconds": 15.003652399999737,
+    "raw_response": "",
+    "error": "Gemini request failed: ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "retry_attempts": 3
+  }
+]

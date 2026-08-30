@@ -1,0 +1,74 @@
+{
+  "model": "sentence-transformers/gtr-t5-base",
+  "index": "vector_db/gtr_base.index",
+  "metadata": "vector_db/gtr_base_metadata.pkl",
+  "dimension": 768,
+  "query_count": 3,
+  "successful_queries": 3,
+  "failures": [],
+  "average_retrieval_latency_seconds": 18.467372333333362,
+  "fallback_used": false,
+  "gtr_network_access_attempted": false,
+  "queries": [
+    {
+      "query": "Paris is the capital of France.",
+      "results": [
+        {
+          "title": "FAISS",
+          "score": 0.5061107873916626,
+          "evidence": "FAISS is a library for efficient similarity search and clustering of dense vectors. It was developed by Meta AI Research."
+        },
+        {
+          "title": "Python (programming language)",
+          "score": 0.5000208616256714,
+          "evidence": "Python is a high-level general-purpose programming language. It was created by Guido van Rossum and first released in 1991."
+        }
+      ],
+      "result_count": 2,
+      "retrieval_latency_seconds": 55.199664199999916,
+      "model": "sentence-transformers/gtr-t5-base",
+      "retrieval_mode": "paper/GTR",
+      "index": "vector_db/gtr_base.index"
+    },
+    {
+      "query": "A coffee table holds art books.",
+      "results": [
+        {
+          "title": "FAISS",
+          "score": 0.4931204617023468,
+          "evidence": "FAISS is a library for efficient similarity search and clustering of dense vectors. It was developed by Meta AI Research."
+        },
+        {
+          "title": "Natural language inference",
+          "score": 0.4624084532260895,
+          "evidence": "Natural language inference determines whether a premise entails, contradicts, or is neutral toward a hypothesis."
+        }
+      ],
+      "result_count": 2,
+      "retrieval_latency_seconds": 0.10124740000014754,
+      "model": "sentence-transformers/gtr-t5-base",
+      "retrieval_mode": "paper/GTR",
+      "index": "vector_db/gtr_base.index"
+    },
+    {
+      "query": "The Eiffel Tower is in Paris.",
+      "results": [
+        {
+          "title": "FAISS",
+          "score": 0.4746623635292053,
+          "evidence": "FAISS is a library for efficient similarity search and clustering of dense vectors. It was developed by Meta AI Research."
+        },
+        {
+          "title": "Wikipedia",
+          "score": 0.46441006660461426,
+          "evidence": "Wikipedia is a free online encyclopedia written and maintained by a community of volunteers. Its articles are available in many languages."
+        }
+      ],
+      "result_count": 2,
+      "retrieval_latency_seconds": 0.1012054000000262,
+      "model": "sentence-transformers/gtr-t5-base",
+      "retrieval_mode": "paper/GTR",
+      "index": "vector_db/gtr_base.index"
+    }
+  ]
+}

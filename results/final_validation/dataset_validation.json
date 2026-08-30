@@ -1,0 +1,8 @@
+{
+  "path": "D:\\halu\\data\\halu_eval\\general_data.json",
+  "records": 4507,
+  "labels": {
+    "hallucination": 815,
+    "no_hallucination": 3692
+  }
+}

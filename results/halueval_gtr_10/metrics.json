@@ -1,0 +1,41 @@
+{
+  "total_samples": 10,
+  "correct_predictions": 7,
+  "incorrect_predictions": 3,
+  "accuracy": 0.7,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1_score": 0.0,
+  "tp": 0,
+  "tn": 7,
+  "fp": 1,
+  "fn": 2,
+  "confusion_matrix": {
+    "labels": [
+      "no_hallucination",
+      "hallucination"
+    ],
+    "matrix": {
+      "no_hallucination": {
+        "no_hallucination": 7,
+        "hallucination": 1
+      },
+      "hallucination": {
+        "no_hallucination": 2,
+        "hallucination": 0
+      }
+    }
+  },
+  "attempted_samples": 10,
+  "successful_samples": 10,
+  "failed_samples": 0,
+  "error_count": 0,
+  "average_processing_time_seconds": 8.860464179999985,
+  "minimum_processing_time_seconds": 2.028417900000022,
+  "maximum_processing_time_seconds": 21.427122499999996,
+  "average_gtr_retrieval_seconds": 1.406926580000004,
+  "average_nli_inference_seconds": 7.053833339999983,
+  "retrieval_mode": "paper/GTR",
+  "model": "sentence-transformers/gtr-t5-base",
+  "embedding_dimension": 768
+}

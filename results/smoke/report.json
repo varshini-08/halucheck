@@ -1,0 +1,33 @@
+{
+  "dataset": "data/halu_eval/smoke.json",
+  "evaluated_samples": 2,
+  "metrics": {
+    "total_samples": 2,
+    "correct_predictions": 2,
+    "incorrect_predictions": 0,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "confusion_matrix": {
+      "labels": [
+        "no_hallucination",
+        "hallucination"
+      ],
+      "matrix": {
+        "no_hallucination": {
+          "no_hallucination": 1,
+          "hallucination": 0
+        },
+        "hallucination": {
+          "no_hallucination": 0,
+          "hallucination": 1
+        }
+      }
+    },
+    "failed_samples": 0
+  },
+  "average_processing_time_seconds": 1.9849999944199226e-05,
+  "retrieval_configuration": "hybrid local knowledge base + Wikipedia fallback",
+  "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli"
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "sample_id": "3684",
+    "query": "Create a 100-word description of a room",
+    "response": "The room was spacious and bright, with large windows letting in the warm sunlight of the late afternoon. Against one wall stood a sleek, modern sofa upholstered in rich cream leather, flanked by a matching armchair. In the center of the room, a low coffee table held a collection of art books and a vase of fresh-cut flowers. Above the table hung a stunning chandelier with glimmering crystals catching the light. On the opposite wall, a massive mahogany bookcase reached to the ceiling, filled with a collection of antique volumes and modern paperbacks alike. A plush wool rug lay beneath the furniture, and a collection of framed artwork adorned the walls, completing the room\u2019s air of elegance and comfort.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 8,
+    "evidence_count": 24,
+    "error": null,
+    "retrieval_mode": "paper/GTR",
+    "timings": {
+      "extraction_seconds": 0.5532992999999351,
+      "entity_seconds": 1.2299999980314169e-05,
+      "local_faiss_seconds": 0.1646694999999454,
+      "wikipedia_search_seconds": 0.0,
+      "wikipedia_article_seconds": 0.0,
+      "wikipedia_chunk_ranking_seconds": 0.0,
+      "retrieval_seconds": 7.995059400000173,
+      "verification_seconds": 13.102299800000083,
+      "nli_load_seconds": 0.8889504999999644,
+      "nli_inference_seconds": 12.213074600000027,
+      "total_seconds": 21.6518066000001
+    },
+    "processing_time_seconds": 21.65190359999997,
+    "retrieval_model": "sentence-transformers/gtr-t5-base",
+    "embedding_dimension": 768
+  },
+  {
+    "sample_id": "1783",
+    "query": "Generate an example of a time when someone displayed initiative.",
+    "response": "One example of someone displaying initiative could be a student who noticed that their school's recycling program was lacking and decided to take action. The student researched the benefits of recycling, created a proposal outlining how to improve the program, and spoke to the school administration about implementing changes. They also took on the responsibility of educating their peers and promoting the new program throughout their school. Thanks to their initiative, the school was able to reduce its environmental impact and inspire others to do the same.",
+    "expected_label": "no_hallucination",
+    "predicted_label": "no_hallucination",
+    "fact_count": 4,
+    "evidence_count": 12,
+    "error": null,
+    "retrieval_mode": "paper/GTR",
+    "timings": {
+      "extraction_seconds": 0.2977412000000186,
+      "entity_seconds": 1.0400000064691994e-05,
+      "local_faiss_seconds": 0.14558839999995143,
+      "wikipedia_search_seconds": 0.0,
+      "wikipedia_article_seconds": 0.0,
+      "wikipedia_chunk_ranking_seconds": 0.0,
+      "retrieval_seconds": 0.7335118000000875,
+      "verification_seconds": 6.020439099999976,
+      "nli_load_seconds": 5.399999963628943e-06,
+      "nli_inference_seconds": 6.020197999999937,
+      "total_seconds": 7.0526022999999896
+    },
+    "processing_time_seconds": 7.052687700000206,
+    "retrieval_model": "sentence-transformers/gtr-t5-base",
+    "embedding_dimension": 768
+  }
+]

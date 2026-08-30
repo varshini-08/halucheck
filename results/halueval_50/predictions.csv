@@ -1,0 +1,263 @@
+sample_id,query,response,expected_label,predicted_label,fact_count,supported_fact_count,contradicted_fact_count,neutral_fact_count,confidence,processing_time_seconds,retrieval_configuration,nli_model,error
+3684,Create a 100-word description of a room,"The room was spacious and bright, with large windows letting in the warm sunlight of the late afternoon. Against one wall stood a sleek, modern sofa upholstered in rich cream leather, flanked by a matching armchair. In the center of the room, a low coffee table held a collection of art books and a vase of fresh-cut flowers. Above the table hung a stunning chandelier with glimmering crystals catching the light. On the opposite wall, a massive mahogany bookcase reached to the ceiling, filled with a collection of antique volumes and modern paperbacks alike. A plush wool rug lay beneath the furniture, and a collection of framed artwork adorned the walls, completing the room’s air of elegance and comfort.",no_hallucination,no_hallucination,8,2,0,6,0.34228515625,104.09912080000001,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+1783,Generate an example of a time when someone displayed initiative.,"One example of someone displaying initiative could be a student who noticed that their school's recycling program was lacking and decided to take action. The student researched the benefits of recycling, created a proposal outlining how to improve the program, and spoke to the school administration about implementing changes. They also took on the responsibility of educating their peers and promoting the new program throughout their school. Thanks to their initiative, the school was able to reduce its environmental impact and inspire others to do the same.",no_hallucination,no_hallucination,4,0,0,4,0.953857421875,91.85231590000001,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+552,Design an algorithm to identify a person's age from their date of birth.,"1. Input the person's date of birth in the format of DD/MM/YYYY.
+2. Extract the year of birth from the input and assign it to a variable.
+3. Calculate the current year and assign it to another variable.
+4. Calculate the difference between the current year and the year of birth to obtain the age.
+5. Display the age as the output.
+
+Example code in Python:
+
+```
+dob = input(""Enter date of birth in DD/MM/YYYY format: "")
+year_of_birth = int(dob[-4:])
+current_year = datetime.now().year
+age = current_year - year_of_birth
+print(""The person's age is:"", age)
+``` 
+(Note: this code uses the Python datetime module to obtain the current year.)",no_hallucination,no_hallucination,1,1,0,0,0.80859375,23.45824909999999,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+2139,"Figure out why this code does not work
+const fruits = [ 'apple', 'orange', 'banana' ]; 
+
+fruits.forEach(x =>  console.log(`I love ${x}`) );","This code should work correctly. It declares an array called ""fruits"" containing three strings, and then uses the ""forEach"" method to loop through each element in the array and log a message to the console using a template literal. The output should be:
+
+I love apple
+I love orange
+I love banana
+
+If this code is not working, there may be an error elsewhere in the program, or the console may not be displaying the output for some reason. Some potential troubleshooting steps could include checking for syntax errors or incorrect variable names, using the console.log function to debug the code, or trying to run the code in a different environment or browser to see if the issue persists.",hallucination,no_hallucination,5,2,0,3,0.66826171875,90.14050400000002,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+1964,"Add an example to illustrate the meaning of the idiom ""a piece of cake"".","When we asked him to solve that complicated math problem, he said it was a piece of cake and solved it in minutes.",no_hallucination,no_hallucination,1,0,0,1,0.6171875,27.40348210000002,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+3001,Find 3 quotes from 'Harry Potter and the Sorcerer's Stone'.,"1. ""It does not do to dwell on dreams and forget to live."" - Albus Dumbledore 
+
+2. ""It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends."" - Albus Dumbledore 
+
+3. ""To the well-organized mind, death is but the next great adventure."" - Albus Dumbledore",no_hallucination,no_hallucination,3,0,0,3,0.0,1.2118793000000778,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+1601,Create an analogy that illustrates the difference between a programming language and an API,"A programming language is like a toolbox filled with different types of tools, each with its own specific function. Each tool can be used to create something new or modify existing objects, much like how a programming language can be used to write code to perform specific tasks.
+
+On the other hand, an API is like a pre-built assembly that uses a specific set of tools from the programming language toolbox. This assembly allows you to easily accomplish a specific task without having to write all the code from scratch. Just like how you can use an assembly to speed up the building process, an API can be used to speed up the development process, making it easier and faster to create complex applications.",no_hallucination,no_hallucination,5,2,0,3,0.35869140625,46.765087900000026,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+488,Predict the values of x and y in the following equation: 9x + 4y = 36.,"There are infinitely many (x, y) pairs that could satisfy this equation, so without more information it is not possible to predict specific values for x and y. 
+
+However, we can rearrange the equation to the slope-intercept form y = mx + b, where m is the slope and b is the y-intercept:
+
+9x + 4y = 36
+4y = -9x + 36   (subtract 9x from both sides)
+y = (-9/4)x + 9  (divide both sides by 4)
+
+From this form, we can see that the slope of the line is -9/4, meaning that for every increase in x by 4 units, y decreases by 9 units. The y-intercept is 9, meaning that the line passes through the point (0,9) on the y-axis. With this information, we can graph the line and determine various (x,y) pairs that satisfy the equation.",no_hallucination,no_hallucination,7,3,0,4,0.42410714285714285,92.64932720000002,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+3271,"Analyze the given poem and rewrite it with a new title and an altered tone.
+Title: ""Lost""
+
+I stare out into the void,
+Searching for a life I never employed.
+
+My path is a long, sad descent,
+Words mean nothing as I relent.","Rewritten Poem:
+
+Title: ""On the Search for Purpose""
+
+With a hesitant gaze and a curious mind,
+I set out to find what I've yet to define.
+
+A journey with twists and turns on every bend,
+But each step taken, I gain new friend.
+
+The words matter, they have the power,
+To ignite hope in the darkest hour.
+
+No longer do I feel lost and alone,
+My purpose awaits, a journey to be shown.",hallucination,no_hallucination,4,0,0,4,0.6597900390625,70.3244803,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+4429,"Find the mistakes in the following table
+Country | Capital | Population
+Russia | Moscow | 145.93 million
+France | London | 67.41 million","Mistakes:
+1. The capital of France is not London, it is Paris.
+2. The population of London is not listed correctly, as it is a city and not a country.
+Corrected table:
+Country | Capital | Population
+Russia | Moscow | 145.93 million
+France | Paris | 67.41 million",no_hallucination,no_hallucination,2,2,0,0,0.90283203125,46.28956619999997,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+723,Create a top-down outline for writing a logical argument.,"I. Introduction
+ A. Background Information
+ B. Thesis Statement
+
+II. Context of the Argument
+ A. The Problem or Issue
+ B. The Importance of the Issue
+ C. Key terms and Concepts
+
+III. Evidence of the Argument
+ A. Facts and Data
+ B. Statistics
+ C. Expert Opinions
+ D. Personal Experiences
+
+IV. Counterarguments
+ A. Explanation of opposing arguments
+ B. Refutation of opposing arguments
+
+V. Conclusion
+ A. Recap of the Argument
+ B. Call to Action or Solution
+ C. Overall Implications and Future Considerations",no_hallucination,no_hallucination,0,0,0,0,0.0,0.1589556999999786,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+584,Write a rhyming poem containing at least 10 lines.,"I woke up early with the sun,
+To start the day, to get it done.
+The birds were chirping in the trees,
+A gentle breeze, a perfect breeze.
+
+I stretched my arms up to the sky,
+To feel the air, make myself fly.
+A cup of coffee in my hand,
+My senses waking up their band.
+
+I took a walk down by the creek,
+To find some peace, a place to sneak.
+I saw some flowers, oh so bright,
+And felt the world now feels so right.
+
+A brand new day, a fresh, clean slate,
+Let's not waste time, let's not be late.
+The journey's long, but it's worthwhile,
+With every step, we'll learn to smile.",no_hallucination,no_hallucination,9,0,0,9,0.4459635416666667,91.53389920000006,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+3567,List three possible problems that a faulty Internet connection can cause.,"1. Slow Loading Times: A faulty internet connection can cause slow loading times, which can be frustrating and lead to decreased productivity.
+
+2. Limited Access: A faulty internet connection can limit your access to the internet, which can be a major problem if you rely on the internet for work or other essential tasks.
+
+3. Security Vulnerabilities: A faulty internet connection can leave your computer or network vulnerable to security threats, such as malware or hacking attacks. This can lead to data loss, identity theft, and other serious problems.",hallucination,no_hallucination,5,2,0,3,0.804296875,114.62998230000005,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+4492,"Describe a new use case for a given product.
+Smartwatch","A new use case for a smartwatch could be to monitor and track the health of the wearer's pets. With the help of sensors such as heart rate monitor and GPS, the smartwatch can track the pet's movement, heart rate, and activity levels. It can also provide reminders for the pet's feeding and medication schedules. The information collected can be integrated with the veterinarian's records to help better manage the pet's health. Pet owners can also receive alerts on their smartwatches if their pets become lost or stray away from their designated safe zones. This use case adds an extra layer of support to pet owners who want to keep their furry friends healthy and safe.",no_hallucination,no_hallucination,7,1,0,6,0.6236049107142857,110.05058020000001,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+442,Write a horror story in 5 or less sentences.,"The doll sat on the shelf, its glass eyes glinting in the moonlight. As I walked past, it turned its head to follow me. Later that night, I woke up to the sound of giggling, and saw the doll at the end of my bed. Suddenly, its face contorted into a horrifying smile, revealing razor-sharp teeth, and it lunged towards me.",no_hallucination,no_hallucination,6,0,0,6,0.63623046875,82.5280388000001,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+2556,Explain the concept of 'code smell'.,"Code smell refers to any characteristic or attribute in the source code of a computer program that might indicate the presence of a more significant issue. It is often described as any indicator that the code is not as it should be and needs improvement.
+
+The term ""code smell"" is often used metaphorically, as it's similar to how unpleasant smells can indicate disease, rot, or other issues. Some common signs of code smells include features that are hard to modify or debug, redundant code, large and complex modules, excessively verbose functions, and poor naming practices.
+
+Spotting code smells is critical because they can be an early warning sign of much more significant issues that can cause significant problems if they're allowed to persist. By addressing code smells promptly, developers can proactively improve the quality of their code and prevent more significant issues from developing down the line.",no_hallucination,no_hallucination,7,1,0,6,0.5153459821428571,91.94284850000008,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+2408,What invention from the 1950s still has an impact today?,"The transistor, invented in the late 1940s and popularized in the 1950s, still has a significant impact today as a fundamental component in modern electronics. It revolutionized the field of electronics by replacing bulky and unreliable vacuum tubes with smaller and more efficient components, paving the way for the development of technologies such as the personal computer, smartphones, and modern medical equipment.",no_hallucination,no_hallucination,2,0,0,2,0.483642578125,24.28992459999995,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+3086,Summarize the recent news about unemployment.,"As an AI language model, I do not have access to current news. However, here's a general summary of some past news about unemployment: In 2020, unemployment rates in many countries rose significantly due to the COVID-19 pandemic, resulting in business closures and job losses. Governments introduced stimulus packages and unemployment benefits to support those impacted. As the global economy recovers, unemployment rates have started to decline, but there are fears of job losses continuing in certain sectors due to ongoing lockdowns and changing consumer behavior.",no_hallucination,no_hallucination,6,2,0,4,0.42626953125,63.58918389999985,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+4329,Name five business strategies businesses can use to succeed,"1. Differentiation Strategy - This strategy involves offering unique and differentiated products or services that stand out in the market, making it difficult for competitors to replicate or imitate.
+
+2. Cost Leadership Strategy - This strategy focuses on offering products or services at lower prices than competitors while maintaining quality and profitability.
+
+3. Market Penetration Strategy - This strategy involves expanding the company's market share by increasing sales of existing products or services to existing customers or targeting new market segments.
+
+4. Diversification Strategy - This strategy involves expanding the company's product or service offerings into new markets or industries to reduce dependence on a single product or market.
+
+5. Innovation Strategy - This strategy involves constantly developing new and innovative products or services to keep up with changing customer needs and tastes, thereby maintaining a competitive edge.",no_hallucination,no_hallucination,5,1,0,4,0.8791015625,114.74065619999988,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+4417,Provide a brief explanation of the String Theory.,"String Theory is a theoretical framework that attempts to reconcile quantum mechanics and general relativity by describing fundamental particles as tiny, one-dimensional strings instead of point-like particles. These strings vibrate at different frequencies, giving rise to different particles and their properties. String theory suggests that there may be extra dimensions beyond the three spatial and one temporal dimensions we experience, and that gravity may be related to the curvature of space-time caused by these extra dimensions. However, since string theory has yet to be experimentally confirmed, it remains a topic of debate and scrutiny within the scientific community.",no_hallucination,no_hallucination,4,1,0,3,0.8521728515625,94.1060167999999,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+3584,Summarize the debate about global warming.,"The debate about global warming centers on whether or not human activity is the main cause of a significant rise in the Earth's average surface temperature. Those who argue that global warming is a real and pressing issue believe that the burning of fossil fuels like coal, oil and gas is releasing huge amounts of greenhouse gases, like carbon dioxide, into the atmosphere, causing the Earth to warm up. However, critics argue that climate change is a natural process and that global temperatures have fluctuated throughout history. Some also contend that the evidence to support human-caused global warming is not strong enough and that alternative explanations, like changes in the Earth's orbit, are more plausible. Despite ongoing debate, the overwhelming scientific consensus is that climate change is real and human-caused, and that the planet is likely to face increasingly severe consequences unless action is taken to curb emissions.",hallucination,no_hallucination,5,1,0,4,0.921484375,117.67942370000014,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+4506,Predict the 2021 wildfire season in California.,"As an AI language model, I do not have the capability to predict the future with certainty. However, based on historical trends and current weather conditions, it is likely that California will experience another active wildfire season in 2021. A combination of factors, including prolonged periods of drought, high temperatures, and strong winds, can contribute to the outbreak of wildland fires. Additionally, the accumulation of dry fuels such as grasses, shrubs, and dead wood can also increase the risk of wildfires. It is important for residents of California to remain vigilant and prepared in the event of a fire, and for authorities to take necessary measures to prevent and manage wildfires.",no_hallucination,hallucination,5,3,1,1,0.79990234375,114.58720440000002,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+4387,List three methods to reduce stress,"1. Exercise: Physical activity is a great way to reduce stress. Exercise can improve your mood, reduce anxiety and depression, boost self-esteem, and increase your body's production of endorphins – the natural chemicals that make you feel good.
+
+2. Meditation: Mindfulness meditation is a proven technique for reducing stress, improving mental clarity, and enhancing overall well-being. By focusing your attention on the present moment, you can reduce stress and anxiety caused by worrying about the future or ruminating on past events.
+
+3. Social Support: Talking to friends and family members can help reduce stress. Sometimes just venting your worries and frustrations to others can help you feel better. You can also seek professional help from a therapist or counselor if you need additional support. Having a strong social support system can make a big difference in your ability to cope with stress.",no_hallucination,no_hallucination,9,2,0,7,0.4064670138888889,86.53987959999995,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+2728,What is the main difference between acute and chronic diseases?,"The main difference between acute and chronic diseases is the duration of the illness. Acute diseases have a sudden onset and last for a short period, usually a few days to a few weeks. Common examples of acute illnesses include cold and flu, ear infections, and appendicitis. Chronic diseases, on the other hand, are long-lasting illnesses that persist for months or years. These conditions often develop slowly and may include symptoms that come and go over time. Examples of chronic diseases include diabetes, heart disease, and arthritis.",no_hallucination,no_hallucination,8,4,0,4,0.55499267578125,101.02752110000006,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+4078,Create a to-do list for a morning routine for a student.,"1. Wake up at a reasonable time
+2. Brush teeth and wash face
+3. Make the bed
+4. Get dressed in appropriate clothing for the day
+5. Eat breakfast
+6. Pack necessary school supplies
+7. Check schedule for the day and review any assignments
+8. Leave for school on time 
+9. Take any necessary medication
+10. Say affirmations and set intentions for the day.",no_hallucination,no_hallucination,1,0,0,1,0.96142578125,2.0184529000000566,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+3374,"For the following statement, list two pros and two cons.
+Increasing the budget for public education.","Pros:
+1. Improved quality of education due to increased funding.
+2. More resources and opportunities available for students and teachers.
+
+Cons:
+1. Higher taxes or reallocation of funds may be required, which may be controversial.
+2. Funding may not be distributed equally, and some districts may receive more resources than others.",no_hallucination,no_hallucination,2,0,0,2,0.9482421875,48.37496709999982,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+4301,"Update the given code to make it more efficient.
+for (int i=0; i < N; i++)
+  for (int j=0; j < N; j++)
+    A[i][j] = A[j][i];","A more efficient implementation of the same code would be:
+for (int i=0; i < N; i++)
+  for (int j=i+1; j < N; j++)
+    swap(A[i][j], A[j][i]);
+
+This implementation avoids redundantly assigning values to the same indices and only loops through the upper triangle of the matrix. Additionally, it uses the swap function to exchange the values in the matrix, reducing the number of operations required.",no_hallucination,no_hallucination,3,0,0,3,0.4993489583333333,46.64374729999963,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+2505,"Combine two unrelated names and generate a superpower.
+Ethan, Olivia","Ethanvia - The power to manipulate sound waves and turn them into a physical force. This allows Ethanvia to create powerful sonic blasts, deafen opponents, and even control the movements of objects through sound vibrations. Additionally, Ethanvia possesses superhuman agility and reflexes, making them a formidable opponent in close combat.",no_hallucination,no_hallucination,3,0,0,3,0.0,0.653273999999783,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+2459,"Analyze this sentence: ""She blamed his unprofessional behavior on his lack of experience""","This sentence is a cause-and-effect statement. The subject ""She"" is blaming ""his unprofessional behavior"" on the object ""his lack of experience"". The sentence implies that the person acted unprofessionally because they lacked experience. It also suggests that the person could behave differently if they gained more experience.",no_hallucination,no_hallucination,4,1,0,3,0.7169189453125,69.2691863,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+4025,Create a reminder to take a break every 10 minutes while you are working.,"Reminder: Don't forget to take a break every 10 minutes while you are working. This will help you stay focused and avoid burnout. Set a timer or reminder on your phone to remind you when it is time to take a quick break, stretch your muscles or take a short walk. Remember, breaks are essential for your physical and mental health, so make sure you take them regularly.",no_hallucination,no_hallucination,4,1,0,3,0.63671875,69.0099765,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+3004,Create a metaphor for an organizational culture,"An organizational culture is like a garden, where a variety of plants, flowers, and trees thrive in different ways and contribute harmoniously to creating a beautiful and flourishing environment.",no_hallucination,no_hallucination,1,0,0,1,0.93212890625,24.710626800000227,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+1350,"Come up with 3 ways to improve given product.
+Toothbrush","1. Add a built-in timer to ensure users brush their teeth for the recommended two minutes. 
+2. Include bristles of varying thickness and flexibility to provide a more thorough clean for people with different mouth shapes and sensitivities. 
+3. Develop an eco-friendly version made from sustainable materials or with a reusable handle to reduce waste and environmental impact.",no_hallucination,no_hallucination,1,0,0,1,0.8359375,25.086051899999802,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+49,Summarize a given article in 50 words or less.,"The majority of finance decision markers believe automation and machine learning technology will replace roles in the finance industry, according to a study of 500 CFOs. However, only 16 percent of respondents plan to remove human staff from finance departments within in the next two years. 
+",no_hallucination,no_hallucination,2,0,0,2,0.48828125,9.899817699999858,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+233,"Edit the poem to make it a sonnet.
+The sky was so dark, and the stars so bright
+I almost fell as I looked up to the sky
+A storm is brewing, I can feel its might
+What wild secrets lurk up in the sky","The sky's darkness and stars ablaze in sight,  
+My eyes gazed upwards, lost in wonder's lie.  
+A tempest brews, its power now in flight,  
+I sense the chaos, swirling nigh on high.  
+
+What secrets hide amidst the clouds and space,  
+As lightning strikes and thunder roars in fear?  
+Do deities preside o'er such grand grace,  
+And reign o'er nature's wrath with rules austere?  
+
+Yet still I stand, my thoughts consumed with awe,  
+The sky, a painting, vivid, bright, and rare.  
+Amid the storm, my heart begins to thaw,  
+For beauty hides even in utmost scare.  
+
+Oh, mighty sky, your secrets may confound,  
+But in your awe, rare treasures can be found.",no_hallucination,no_hallucination,8,0,0,8,0.22784423828125,52.531830499999614,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+3980,What is a stack data structure?,"A stack data structure is a type of linear data structure in which elements are stored and accessed in a Last-In-First-Out (LIFO) manner, meaning the most recently added element is at the top and the oldest element is at the bottom. The stack has two primary operations: push, which adds an element to the top of the stack, and pop, which removes and returns the top element from the stack. Other operations may include peek, to view the top element without removing it, and empty, to determine if the stack is empty. Stacks are commonly used in programming languages, compilers, and operating systems to manage function calls, expressions, and system-level operations.",hallucination,no_hallucination,4,0,0,4,0.0,1.4473409000001993,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+1091,Come up with ten people who are currently the leading entrepreneurs in the technology industry.,"1) Elon Musk - CEO of Tesla and SpaceX
+2) Jeff Bezos - Founder and CEO of Amazon
+3) Mark Zuckerberg - Founder and CEO of Facebook
+4) Bill Gates - Co-founder of Microsoft
+5) Sundar Pichai - CEO of Google
+6) Satya Nadella - CEO of Microsoft
+7) Tim Cook - CEO of Apple
+8) Reed Hastings - Co-founder and CEO of Netflix
+9) Brian Chesky - Co-founder and CEO of Airbnb
+10) Jensen Huang - Co-founder and CEO of NVIDIA",no_hallucination,no_hallucination,0,0,0,0,0.0,0.12266070000032414,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+167,Come up with a list of character traits that describe the main protagonist of the story.,"As an AI language model, I do not know the main protagonist of your story. Thus, I can provide you with a generic list of character traits that you can refer to in creating the protagonist.
+
+- courageous
+- resilient
+- determined
+- resourceful
+- intelligent
+- compassionate
+- empathetic
+- reliable
+- honest
+- adventurous
+- ambitious
+- curious
+- independent
+- creative
+- humble
+- sincere
+- loyal
+- patient
+- optimistic",no_hallucination,no_hallucination,2,1,0,1,0.3603515625,24.050952600000073,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+458,Identify an interesting fact about Saturn.,"Saturn has the most extensive and complex system of rings in the entire solar system, consisting of seven main rings and several fainter, less distinct ones. These rings are primarily composed of ice particles, ranging in size from tiny grains to large boulders, and can be up to 280,000 kilometers (174,000 miles) wide, while only a few meters thick.",hallucination,hallucination,2,0,1,1,0.916015625,47.87298809999993,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+2197,"Give me a context in which this idiom is applicable.
+""To each their own""","A group of friends is discussing their favorite type of music. One of them likes pop, another likes rock, and another likes electronic. They start to argue about which genre is the best, but then one of them says ""to each their own"" and they agree to respect each other's music preferences.",no_hallucination,hallucination,4,0,1,3,0.726318359375,68.54980409999962,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+3061,Give an example of how the internet can be used to help the environment.,"One example of how the internet can be used to help the environment is by promoting virtual meetings instead of in-person meetings. This can reduce the amount of travel required for business and personal meetings, which in turn reduces carbon emissions from cars and planes. Additionally, individuals can use the internet to research and find tips on living a more environmentally-friendly lifestyle, such as ways to reduce household energy consumption and waste production. Online marketplaces and social media can also be used to promote the sale and exchange of second-hand and upcycled goods, reducing the need for new production and therefore reducing the environmental impact of manufacturing.",no_hallucination,no_hallucination,4,0,0,4,0.4918212890625,48.644286400000055,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+734,Generate a representative example of how individuals should react to prejudice.,"Suppose a person hears derogatory comments about a particular ethnic or religious group. In this scenario, the individual should refrain from participating in such conversations and instead speak up and challenge such bigoted remarks. He/she can explain to the person why their statements are wrong and hurtful, and also educate them on cultural differences and the importance of respect for diversity. Additionally, the person can also report the incident to their organization's HR department or take other necessary actions as per the company's policy to prevent such incidents from occurring again. Ultimately, the individual should uphold inclusion and diversity values and do their part in creating a more inclusive and harmonious society.",no_hallucination,no_hallucination,9,1,0,8,0.4977756076388889,118.65152519999992,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+3280,Create a quick and easy way to store user data.,"One quick and easy way to store user data is to use a cloud-based service like Firebase. Firebase allows you to store and retrieve data in real-time using a simple API. You can store user data in a NoSQL database, with each user represented by a unique document. You can also enable user authentication using email/password, Google, or other popular providers to secure user data. This way, you can easily keep track of user information such as names, profiles, preferences, settings, and more. Firebase is free to use, and you only pay for additional services if needed, such as cloud storage or hosting. It is also scalable and reliable, making it a suitable solution for small and large applications.",no_hallucination,no_hallucination,8,2,0,6,0.67669677734375,121.44982489999984,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+2026,"Write a detailed description about a person in 50 words
+Person: Sarah","Sarah is a 25-year-old businesswoman with a passion for corporate social responsibility. Her warm and approachable personality allows her to connect with people easily. In her free time, she can be found outdoors hiking or enjoying a good book. She is driven, compassionate, and always looking for ways to make a positive impact on the world.",no_hallucination,no_hallucination,4,1,0,3,0.9757080078125,82.48305059999984,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+912,Describe an animal unique to your region in under 100 words.,"The kangaroo is a unique and iconic animal found in Australia. They are herbivorous marsupials with strong hind legs, which they use to hop at high speeds over long distances. Kangaroos are the largest living marsupials and can grow up to 2 metres tall. They are found in the wild across Australia and are a symbol of strength and endurance. By using their powerful legs and tail, they can cover up to 9m in a single hop. The kangaroo is an important part of Australian culture and is a beloved animal that draws tourists from all over the world.",no_hallucination,no_hallucination,9,3,0,6,0.6982964409722222,160.0162336999997,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+222,I have a jar of coins and I think it is not the right number of coins. Can you help me count the coins?,"Sure! Can you give me some more information about the jar of coins? How big is the jar? What types of coins are in the jar? And roughly, how many coins do you think are inside?",hallucination,no_hallucination,4,0,0,4,0.8323974609375,96.08202690000007,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+237,Research the latest news on the topic “AI in healthcare” and provide a summary with what you found in less than 100 words.,"AI in healthcare has had some major breakthroughs, including the detection of Alzheimer's 6 years before symptoms appear, and the creation of an AI system for predicting schizophrenia with an 93% accuracy rate. However, there are also concerns about the security and privacy of patient data and the potential for AI to exacerbate existing health disparities.",no_hallucination,hallucination,2,1,1,0,0.893310546875,31.958040099999835,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+3854,Generate an opening sentence for a horror story that occurs in an abandoned castle.,"As the full moon rose higher into the night sky, the rusted gates of the abandoned castle screeched open, inviting us into its dark and ominous depths.",no_hallucination,no_hallucination,1,0,0,1,0.0,0.6038112999999612,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+479,Predict a future technological advancement.,"As an AI language model, I cannot predict the future with any certainty, but I can speculate. One technological advancement that could emerge in the future is the development of quantum computing. Unlike classical computing, which relies on bits, quantum computing uses quantum bits (qubits), which are capable of processing vast amounts of data simultaneously and solving complex problems in a fraction of the time it would take classical computing. The potential applications of quantum computing are vast, from solving complex scientific problems to revolutionizing cryptography and information security. While still in its early stages, quantum computing is a rapidly advancing field, and we can expect to see significant progress in the coming years.",hallucination,no_hallucination,6,3,0,3,0.73095703125,108.13615929999969,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+3203,Create 3 creative metaphors to describe the sound of a thunder storm.,"1) The thunder was like a symphony of drums, each beat echoing through the sky.
+2) The sound of thunder was like the roar of a fierce lion, announcing its dominance.
+3) The thunderstorm sounded like a chaotic dance party in the clouds, with each bolt of lightning adding a burst of energy and excitement.",no_hallucination,no_hallucination,3,0,0,3,0.4962565104166667,25.12971770000013,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+1682,"Identify the mistakes (if any) in the library management system design below.
+The Library Management System should store the number of books available in the library and the activities occurring in the library. Additionally it should also store the details of the users who take the books.","There are no clear mistakes in the design; however, there could be more specifications on what activities should be stored in the system and what details of users should be recorded.",no_hallucination,no_hallucination,1,0,0,1,0.93359375,24.765160599999945,hybrid local knowledge base + Wikipedia fallback,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,

@@ -1,0 +1,12 @@
+{
+  "model": "sentence-transformers/gtr-t5-base",
+  "network_access_attempted": false,
+  "status": "PASS",
+  "embedding_shape": [
+    1,
+    768
+  ],
+  "dimension": 768,
+  "dtype": "float16",
+  "load_seconds": 56.77739240000005
+}

@@ -1,0 +1,4 @@
+configuration,accuracy,precision,recall,f1_score,average_processing_time_seconds
+nli_only,0.7,0.0,0.0,0.0,9.359480429999712
+local_kb,0.8,0.5,0.5,0.5,8.187292880000495
+hybrid,0.8,0.0,0.0,0.0,92.87005594000001

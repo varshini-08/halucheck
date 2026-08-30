@@ -1,0 +1,5 @@
+﻿{
+  "status": "validated_by_existing_nli_tests",
+  "model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+  "checks": ["supported/contradicted/neutral mapping", "probability normalization", "batch inference contract", "empty input validation", "fact classifier aggregation"]
+}

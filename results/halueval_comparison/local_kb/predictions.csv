@@ -1,0 +1,79 @@
+sample_id,query,response,expected_label,predicted_label,fact_count,supported_fact_count,contradicted_fact_count,neutral_fact_count,confidence,processing_time_seconds,configuration,configuration_description,nli_model,error
+3684,Create a 100-word description of a room,"The room was spacious and bright, with large windows letting in the warm sunlight of the late afternoon. Against one wall stood a sleek, modern sofa upholstered in rich cream leather, flanked by a matching armchair. In the center of the room, a low coffee table held a collection of art books and a vase of fresh-cut flowers. Above the table hung a stunning chandelier with glimmering crystals catching the light. On the opposite wall, a massive mahogany bookcase reached to the ceiling, filled with a collection of antique volumes and modern paperbacks alike. A plush wool rug lay beneath the furniture, and a collection of framed artwork adorned the walls, completing the room’s air of elegance and comfort.",no_hallucination,no_hallucination,8,1,0,7,0.97015380859375,14.450640099999873,local_kb,NLI with local FAISS knowledge-base evidence only,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+1783,Generate an example of a time when someone displayed initiative.,"One example of someone displaying initiative could be a student who noticed that their school's recycling program was lacking and decided to take action. The student researched the benefits of recycling, created a proposal outlining how to improve the program, and spoke to the school administration about implementing changes. They also took on the responsibility of educating their peers and promoting the new program throughout their school. Thanks to their initiative, the school was able to reduce its environmental impact and inspire others to do the same.",no_hallucination,no_hallucination,4,0,0,4,0.996337890625,6.9092137000006915,local_kb,NLI with local FAISS knowledge-base evidence only,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+552,Design an algorithm to identify a person's age from their date of birth.,"1. Input the person's date of birth in the format of DD/MM/YYYY.
+2. Extract the year of birth from the input and assign it to a variable.
+3. Calculate the current year and assign it to another variable.
+4. Calculate the difference between the current year and the year of birth to obtain the age.
+5. Display the age as the output.
+
+Example code in Python:
+
+```
+dob = input(""Enter date of birth in DD/MM/YYYY format: "")
+year_of_birth = int(dob[-4:])
+current_year = datetime.now().year
+age = current_year - year_of_birth
+print(""The person's age is:"", age)
+``` 
+(Note: this code uses the Python datetime module to obtain the current year.)",no_hallucination,no_hallucination,1,1,0,0,0.9501953125,3.325858199999857,local_kb,NLI with local FAISS knowledge-base evidence only,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+2139,"Figure out why this code does not work
+const fruits = [ 'apple', 'orange', 'banana' ]; 
+
+fruits.forEach(x =>  console.log(`I love ${x}`) );","This code should work correctly. It declares an array called ""fruits"" containing three strings, and then uses the ""forEach"" method to loop through each element in the array and log a message to the console using a template literal. The output should be:
+
+I love apple
+I love orange
+I love banana
+
+If this code is not working, there may be an error elsewhere in the program, or the console may not be displaying the output for some reason. Some potential troubleshooting steps could include checking for syntax errors or incorrect variable names, using the console.log function to debug the code, or trying to run the code in a different environment or browser to see if the issue persists.",hallucination,hallucination,5,0,1,4,0.98310546875,11.201148199999807,local_kb,NLI with local FAISS knowledge-base evidence only,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+1964,"Add an example to illustrate the meaning of the idiom ""a piece of cake"".","When we asked him to solve that complicated math problem, he said it was a piece of cake and solved it in minutes.",no_hallucination,no_hallucination,1,0,0,1,0.982421875,2.209134800001266,local_kb,NLI with local FAISS knowledge-base evidence only,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+3001,Find 3 quotes from 'Harry Potter and the Sorcerer's Stone'.,"1. ""It does not do to dwell on dreams and forget to live."" - Albus Dumbledore 
+
+2. ""It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends."" - Albus Dumbledore 
+
+3. ""To the well-organized mind, death is but the next great adventure."" - Albus Dumbledore",no_hallucination,no_hallucination,3,0,0,3,0.99560546875,5.434531099999731,local_kb,NLI with local FAISS knowledge-base evidence only,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+1601,Create an analogy that illustrates the difference between a programming language and an API,"A programming language is like a toolbox filled with different types of tools, each with its own specific function. Each tool can be used to create something new or modify existing objects, much like how a programming language can be used to write code to perform specific tasks.
+
+On the other hand, an API is like a pre-built assembly that uses a specific set of tools from the programming language toolbox. This assembly allows you to easily accomplish a specific task without having to write all the code from scratch. Just like how you can use an assembly to speed up the building process, an API can be used to speed up the development process, making it easier and faster to create complex applications.",no_hallucination,no_hallucination,5,0,0,5,0.98037109375,9.885164700001042,local_kb,NLI with local FAISS knowledge-base evidence only,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+488,Predict the values of x and y in the following equation: 9x + 4y = 36.,"There are infinitely many (x, y) pairs that could satisfy this equation, so without more information it is not possible to predict specific values for x and y. 
+
+However, we can rearrange the equation to the slope-intercept form y = mx + b, where m is the slope and b is the y-intercept:
+
+9x + 4y = 36
+4y = -9x + 36   (subtract 9x from both sides)
+y = (-9/4)x + 9  (divide both sides by 4)
+
+From this form, we can see that the slope of the line is -9/4, meaning that for every increase in x by 4 units, y decreases by 9 units. The y-intercept is 9, meaning that the line passes through the point (0,9) on the y-axis. With this information, we can graph the line and determine various (x,y) pairs that satisfy the equation.",no_hallucination,hallucination,7,3,1,3,0.8371930803571429,17.872625800000606,local_kb,NLI with local FAISS knowledge-base evidence only,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+3271,"Analyze the given poem and rewrite it with a new title and an altered tone.
+Title: ""Lost""
+
+I stare out into the void,
+Searching for a life I never employed.
+
+My path is a long, sad descent,
+Words mean nothing as I relent.","Rewritten Poem:
+
+Title: ""On the Search for Purpose""
+
+With a hesitant gaze and a curious mind,
+I set out to find what I've yet to define.
+
+A journey with twists and turns on every bend,
+But each step taken, I gain new friend.
+
+The words matter, they have the power,
+To ignite hope in the darkest hour.
+
+No longer do I feel lost and alone,
+My purpose awaits, a journey to be shown.",hallucination,no_hallucination,4,0,0,4,0.985595703125,7.090322600000945,local_kb,NLI with local FAISS knowledge-base evidence only,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
+4429,"Find the mistakes in the following table
+Country | Capital | Population
+Russia | Moscow | 145.93 million
+France | London | 67.41 million","Mistakes:
+1. The capital of France is not London, it is Paris.
+2. The population of London is not listed correctly, as it is a city and not a country.
+Corrected table:
+Country | Capital | Population
+Russia | Moscow | 145.93 million
+France | Paris | 67.41 million",no_hallucination,no_hallucination,2,1,0,1,0.98291015625,3.4942896000011388,local_kb,NLI with local FAISS knowledge-base evidence only,MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,
