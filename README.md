@@ -54,3 +54,14 @@ This profiles the existing pipeline without generating a new Groq response. Unin
 - Tests: `python -m pytest -q tests`; run Streamlit with `python -m streamlit run app.py`.
 
 Results are under `results/`. See `FINAL_MASTER_STATUS.md` for the authoritative submission status. Gemini's 10-sample baseline remains incomplete due to quota, SelfCheckNLI requires legitimate multi-response data, browser interaction/screenshots remain manual work, cost analysis is not verified, and paper alignment is partial/paper-inspired rather than an exact reproduction.
+
+For a complete Windows PowerShell walkthrough of the existing checkout, see [docs/MANUAL_LOCAL_EXECUTION_GUIDE.md](docs/MANUAL_LOCAL_EXECUTION_GUIDE.md) and [FINAL_LOCAL_EXECUTION_REPORT.md](FINAL_LOCAL_EXECUTION_REPORT.md).
+
+## Multi-source source registry
+
+The API exposes `GET /api/sources` and `GET /api/sources/status` so the React
+frontend can display truthful source capabilities. Local FAISS and Wikipedia
+remain the active retrieval adapters; optional sources are documented in
+[SOURCE_INTEGRATION_REPORT.md](SOURCE_INTEGRATION_REPORT.md) and their empty
+credentials are listed in `.env.example`. Never place API keys in React code.
+The release-level audit is [FINAL_RELEASE_AUDIT.md](FINAL_RELEASE_AUDIT.md); it separates validated results from manual or external-resource limitations.

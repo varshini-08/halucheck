@@ -1,4 +1,9 @@
-"""Product-style Streamlit interface for HaluCheck."""
+"""Legacy prototype interface (not the production entrypoint).
+
+Run ``python -m streamlit run app.py`` for the current dark dashboard. This
+file is retained only for historical comparison and must not be used to
+validate the production UI.
+"""
 from __future__ import annotations
 
 import os

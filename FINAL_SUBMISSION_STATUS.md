@@ -12,7 +12,7 @@ Validation date: 2026-08-30
 | MiniLM comparison | 10-sample PASS | Matched records; accuracy 0.80; TP 0, TN 8, FP 0, FN 2 |
 | HaluEval | VALIDATED | 10/10, 50/50, and 99/100 valid MiniLM result records preserved |
 | NLI | PASS | `python scripts/test_nli_model.py --offline` loads the cached DeBERTa model without a network fallback |
-| Groq | IMPLEMENTED | Provider code and tests exist; no new live request made |
+| Groq | PASS | Controlled request succeeded with the locally configured key; key was not committed |
 | Gemini | INTEGRATION IMPLEMENTED; BASELINE INCOMPLETE | 1 non-error prediction / 10 attempts; remaining attempts are quota-limited |
 | SelfCheckNLI | NOT REPRODUCIBLE | Current official data has one response per prompt, not multiple stochastic responses |
 | Streamlit | STARTUP PASS; MANUAL PENDING | Headless server returned HTTP 200; no screenshots or interactive claims |

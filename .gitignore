@@ -101,6 +101,10 @@ outputs/
 .DS_Store
 Thumbs.db
 .cache/
+results/pytest_temp/
 huggingface/
 models/
 checkpoints/
+
+node_modules/
+*.tsbuildinfo

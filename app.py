@@ -138,6 +138,34 @@ def apply_theme(theme: str) -> None:
             .streamlit-expanderHeader {{border-radius:14px; padding:.7rem .85rem; background:{card}; border:1px solid {border};}}
             .streamlit-expanderContent {{padding-top:.45rem;}}
             .footer-actions {{display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem;}}
+            .hc-page-heading {{display:flex; align-items:center; justify-content:space-between; gap:1rem; margin:.4rem 0 1rem;}}
+            .hc-page-heading h1 {{font-size:2rem; margin:.1rem 0 .2rem; color:{text};}}
+            .hc-page-heading p {{margin:0; color:{muted};}}
+            .hc-eyebrow, .hc-card-kicker {{color:{accent}; font-size:.75rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase;}}
+            .hc-model-pill {{background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; padding:.5rem .75rem; border-radius:999px; font-size:.8rem; font-weight:700;}}
+            .hc-question-card, .hc-response-card, .hc-side-card, .hc-claim-card {{background:{surface}; border:1px solid {border}; border-radius:16px; box-shadow:0 8px 22px rgba(15,23,42,.06);}}
+            .hc-question-card {{padding:1rem 1.1rem; margin-bottom:.8rem;}}
+            .hc-question-text {{margin:.55rem 0 .3rem; padding:.75rem .85rem; border:1px solid {border}; border-radius:10px; color:{text}; background:{card};}}
+            .hc-card-help {{font-size:.8rem; color:{muted};}}
+            .hc-response-card {{padding:1rem 1.1rem; background:linear-gradient(120deg,#f0fdf4,#eff6ff); margin-bottom:.8rem;}}
+            .hc-response-head {{display:flex; justify-content:space-between; gap:1rem; color:#166534; font-size:.85rem;}}
+            .hc-response-head span {{font-size:.76rem; color:{muted};}}
+            .hc-response-body {{margin-top:.65rem; padding:.8rem; border:1px solid #dbeafe; border-radius:10px; background:{surface}; color:{text}; line-height:1.65; white-space:pre-wrap; max-height:260px; overflow:auto;}}
+            .hc-metrics {{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:.65rem; margin-bottom:1rem;}}
+            .hc-metric {{padding:.85rem .75rem; background:{surface}; border:1px solid {border}; border-radius:14px; min-height:106px; display:flex; flex-direction:column; gap:.22rem;}}
+            .hc-metric span {{font-size:.7rem; color:{muted}; font-weight:700; text-transform:uppercase; letter-spacing:.05em;}}
+            .hc-metric strong {{font-size:1.45rem; color:{text};}}
+            .hc-metric small {{font-size:.72rem; color:{muted};}}
+            .hc-metric i {{height:4px; border-radius:10px; background:{accent}; margin-top:auto;}}
+            .hc-metric.green i {{background:#22c55e;}} .hc-metric.red i {{background:#ef4444;}} .hc-metric.amber i {{background:#f59e0b;}}
+            .hc-side-card {{padding:1rem; margin-bottom:.8rem;}} .hc-side-card h3 {{margin:0 0 .8rem; font-size:1rem; color:{text};}} .blue-text {{color:{accent} !important;}}
+            .hc-donut {{width:150px; height:150px; border-radius:50%; margin:1rem auto; display:grid; place-items:center; background:conic-gradient(#22c55e 0 var(--supported), #ef4444 var(--supported) var(--contradicted), #f59e0b var(--contradicted) 100%);}}
+            .hc-donut-hole {{width:104px; height:104px; border-radius:50%; background:{surface}; display:flex; flex-direction:column; align-items:center; justify-content:center; color:{text};}} .hc-donut-hole strong {{font-size:1.5rem;}} .hc-donut-hole span {{font-size:.75rem; color:{muted};}} .hc-donut-empty {{background:{border};}}
+            .hc-legend {{display:flex; flex-direction:column; gap:.3rem; font-size:.75rem; color:{muted};}} .hc-legend .green {{color:#16a34a;}} .hc-legend .red {{color:#dc2626;}} .hc-legend .amber {{color:#d97706;}}
+            .hc-detail-row {{display:flex; justify-content:space-between; gap:.75rem; padding:.5rem 0; border-bottom:1px solid {border}; font-size:.75rem; color:{muted};}} .hc-detail-row:last-child {{border-bottom:0;}} .hc-detail-row b {{color:{text}; text-align:right; max-width:58%; overflow-wrap:anywhere;}}
+            .hc-section-title {{font-size:1.15rem; font-weight:800; color:{text}; margin:.2rem 0 .7rem;}} .hc-claim-card {{padding:.9rem; margin-bottom:.7rem;}} .hc-claim-head {{display:flex; justify-content:space-between; gap:1rem; align-items:flex-start;}} .hc-claim-head small {{display:block; color:{muted}; font-size:.72rem;}} .hc-claim-head strong {{display:block; margin-top:.25rem; color:{text}; line-height:1.45;}} .hc-badge {{border:1px solid; border-radius:999px; padding:.3rem .55rem; font-size:.72rem; font-weight:800; white-space:nowrap;}} .hc-evidence {{margin-top:.75rem; padding:.7rem; background:{card}; border:1px solid {border}; border-radius:10px;}} .hc-evidence b {{color:{text}; font-size:.78rem;}} .hc-evidence p {{margin:.35rem 0; color:{muted}; line-height:1.5; font-size:.8rem;}} .hc-evidence small {{color:{muted};}} .hc-source {{float:right; color:{accent}; font-size:.7rem; font-weight:700;}}
+            @media (max-width: 1050px) {{.hc-metrics {{grid-template-columns:repeat(3,minmax(0,1fr));}}}} @media (max-width: 640px) {{.hc-metrics {{grid-template-columns:repeat(2,minmax(0,1fr));}} .hc-page-heading {{align-items:flex-start; flex-direction:column;}}}}
+            .hc-dashboard {{margin-top:1.1rem; padding:1rem; background:{surface}; border:1px solid {border}; border-radius:16px;}} .hc-dashboard h3 {{margin:0 0 .8rem; color:{text};}} .hc-stat-grid {{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.6rem;}} .hc-stat {{padding:.7rem; border:1px solid {border}; border-radius:10px; background:{card};}} .hc-stat span {{display:block; color:{muted}; font-size:.7rem;}} .hc-stat strong {{display:block; color:{text}; font-size:1.25rem; margin-top:.2rem;}} .hc-chart-row {{display:grid; grid-template-columns:1fr 1fr; gap:.7rem; margin-top:.8rem;}} .hc-mini-chart {{padding:.8rem; border:1px solid {border}; border-radius:10px; background:{card};}} .hc-bars {{height:90px; display:flex; align-items:flex-end; gap:4px; margin-top:.6rem;}} .hc-bars i {{flex:1; min-height:4px; background:{accent}; border-radius:4px 4px 0 0;}} .hc-distribution {{display:flex; flex-direction:column; gap:.45rem; margin-top:.7rem;}} .hc-distribution-row {{display:flex; align-items:center; gap:.5rem; font-size:.72rem; color:{muted};}} .hc-distribution-row i {{height:7px; border-radius:5px; background:#22c55e;}} .hc-distribution-row.red i {{background:#ef4444;}} .hc-distribution-row.amber i {{background:#f59e0b;}} .hc-recent {{width:100%; border-collapse:collapse; margin-top:.8rem; font-size:.72rem;}} .hc-recent th,.hc-recent td {{padding:.5rem; border-bottom:1px solid {border}; text-align:left; color:{muted};}} .hc-recent th {{color:{text};}}
             @media (max-width: 920px) {{.hero-title {{font-size:2.1rem;}} [data-testid="stSidebar"] {{min-width:250px;}}}}
         </style>
         """,
@@ -184,7 +212,7 @@ def render_sidebar() -> tuple[str, str, str]:
         else:
             st.caption("No verified questions yet.")
         st.divider()
-        theme = st.selectbox("Theme", ["System", "Light", "Dark"])
+        theme = st.selectbox("Theme", ["Dark"], index=0, disabled=True)
         st.divider()
         st.markdown("### About")
         st.caption("Version 1.0")
@@ -221,19 +249,16 @@ st.set_page_config(page_title="HaluCheck", page_icon="âœ“", layout="wide", i
 
 theme, sidebar_api_key, selected_provider = render_sidebar()
 apply_theme(theme)
+st.session_state["selected_provider"] = selected_provider
 
 active_model = (os.environ.get("GEMINI_MODEL", "gemini-3.6-flash") if selected_provider == "gemini" else os.environ.get("GROQ_MODEL", "openai/gpt-oss-20b")).strip()
 st.markdown('<div class="app-shell">', unsafe_allow_html=True)
 st.markdown(
-    f'<div class="top-nav"><div class="top-nav__title">HaluCheck</div><div class="model-tabs"><span class="model-tab active">{escape(selected_provider.title())}</span><span class="model-tab">{escape(active_model)}</span></div><div class="top-nav__status">Verification workspace</div></div>',
+    f'<div class="hc-page-heading"><div><div class="hc-eyebrow">AI verification workspace</div><h1>New Analysis</h1><p>Ask a factual question and verify the AI response</p></div><span class="hc-model-pill">● {escape(active_model)}</span></div>',
     unsafe_allow_html=True,
 )
 st.markdown(
-    f'<div class="hero-card"><div><div class="section-kicker">AI verification workspace</div><div class="hero-title">HaluCheck</div><div class="hero-subtitle">Verify whether an AI response is factually correct using hybrid retrieval and natural language inference.</div></div><div class="header-model">Model: {escape(active_model)}<br>Evaluation: DeBERTa-v3 MNLI</div></div> ',
-    unsafe_allow_html=True,
-)
-st.markdown(
-    '<div class="input-card"><div class="section-title">Ask a factual question</div><div class="section-subtitle">The workflow is simple: question, response, evidence, verification, and a final decision.</div>',
+    '<div class="input-card"><div class="section-title">Your Question</div><div class="section-subtitle">Ask factual questions that can be verified against reliable sources.</div>',
     unsafe_allow_html=True,
 )
 question = st.text_area(
@@ -245,7 +270,7 @@ question = st.text_area(
 )
 latest_question = st.session_state.get("latest_question", "")
 action_cols = st.columns([3, 2])
-clicked = action_cols[0].button("Verify Response", type="primary", disabled=not question.strip(), use_container_width=True)
+clicked = action_cols[0].button("Analyze", type="primary", disabled=not question.strip(), use_container_width=True)
 regenerate = action_cols[1].button("Regenerate Response", disabled=not latest_question, use_container_width=True, on_click=load_question, args=(latest_question,))
 if regenerate:
     clicked = True
@@ -304,6 +329,23 @@ if clicked:
             history = st.session_state.setdefault("conversation_history", [])
             if question not in history:
                 history.append(question)
+            # Keep structured history only for analyses that actually completed.
+            # This powers the dashboard summary without introducing sample data.
+            verified_items = list(analysis.verifications)
+            hallucination_count = sum(bool(item.hallucination) for item in verified_items)
+            fact_count = len(analysis.facts)
+            analysis_history = st.session_state.setdefault("analysis_history", [])
+            analysis_history.append({
+                "question": question,
+                "provider": selected_provider,
+                "model": active_model,
+                "hallucination_score": hallucination_count / fact_count if fact_count else 0.0,
+                "supported": sum(item.label == "SUPPORTED" for item in verified_items),
+                "contradicted": sum(item.label == "CONTRADICTED" for item in verified_items),
+                "neutral": sum(item.label == "NEUTRAL" for item in verified_items),
+                "processing_time": st.session_state["pipeline_seconds"],
+                "timestamp": __import__("datetime").datetime.now().isoformat(timespec="seconds"),
+            })
         except LLMServiceException as exc:
             st.error(str(exc))
         except Exception as exc:
@@ -320,9 +362,6 @@ if analysis := st.session_state.get("analysis"):
         st.session_state.get("ui_log", []),
     )
 else:
-    st.markdown(
-        '<div class="welcome-card"><div class="section-kicker">Welcome to HaluCheck</div><div class="section-title">This application verifies whether an AI response is factually correct.</div><div class="section-subtitle">How it works</div><div class="body-card">1. AI generates a response.<br>2. Facts are extracted.<br>3. Evidence is retrieved.<br>4. Each fact is verified.<br>5. A final report is generated.</div><div class="section-subtitle" style="margin-top:1rem;">Start by asking a factual question above.</div></div>',
-        unsafe_allow_html=True,
-    )
+    st.markdown('<div class="hc-empty-state"><strong>Ready to verify.</strong><span>Enter a factual question above to begin an analysis.</span></div>', unsafe_allow_html=True)
 
 st.markdown("</div>", unsafe_allow_html=True)

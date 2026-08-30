@@ -5,7 +5,7 @@ Validation date: 2026-08-30. This is the authoritative final status; older phase
 | Item | Status | Evidence / command | Result and limitation |
 |---|---|---|---|
 | Production system | GREEN | `python -m pytest -q` | 62 passed, 1 skipped |
-| Groq | YELLOW | Provider implementation/tests | Implemented; no new live API call |
+| Groq | GREEN | Controlled request with local `.env` key | Request succeeded; key remains local and ignored |
 | Gemini | YELLOW | detailed baseline artifact | Integration implemented; quota-limited baseline incomplete |
 | Atomic extraction | GREEN | automated tests | Covered by passing suite |
 | Entity matching | GREEN | automated tests | Covered by passing suite |

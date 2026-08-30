@@ -14,6 +14,7 @@ Validation date: 2026-08-30
 | GTR HaluEval experiment | VALIDATED | 10/10 successful; accuracy 0.70; TP 0, TN 7, FP 1, FN 2 |
 | Streamlit startup | PASS | `python -m streamlit run app.py --server.headless true --server.port 8503`; HTTP 200 |
 | Security scan | PASS WITH SCOPE | `.env` is ignored; no literal provider-secret pattern outside excluded `.env`/logs |
+| Groq connectivity | PASS | One controlled request succeeded using the local `.env` key; no key or response content recorded |
 
 ## Current limitations found
 
