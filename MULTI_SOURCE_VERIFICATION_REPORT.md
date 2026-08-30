@@ -17,6 +17,12 @@ Wikidata, World Bank, PubMed, Crossref, OpenAlex, and Google Fact Check (the
 latter requires `GOOGLE_FACT_CHECK_API_KEY`). They normalize official API
 responses into a shared evidence model with timeouts and failure isolation.
 
+Routed external evidence is now integrated into `/api/analyze`: extracted
+claims select configured adapters, searches run in a bounded thread pool,
+normalized results are merged with existing retrieval evidence, duplicates are
+removed, and the existing verification pipeline is re-run over the combined
+evidence. Adapter failures are isolated and do not abort analysis.
+
 ## Sources and priority
 
 Tier 1: Government, UN Data, World Bank, WHO, NASA, NOAA.
@@ -39,15 +45,11 @@ sources requiring credentials or licensing are explicitly marked
 
 ## Limitations
 
-The existing analysis pipeline still executes Local Knowledge Base and
-Wikipedia retrieval by default. The new adapters are callable through
-`/api/sources/{source_id}/search` and are the safe extension point for wiring
-source-specific retrieval into the pipeline after domain routing and API
-availability policy are finalized. Government, UN, WHO, NASA, NOAA, Britannica,
-and Reuters/AP remain explicit configuration/licensing extension points.
-for Wikidata, World Bank, UN, WHO, academic, NASA/NOAA, fact-check, government,
-and news adapters; each requires its own API/terms/rate-limit implementation
-before being enabled for verification.
+The analysis pipeline always includes Local Knowledge Base and Wikipedia.
+Configured adapters among Wikidata, World Bank, PubMed, Crossref, OpenAlex, and
+Google Fact Check are additionally routed by claim domain and included in the
+NLI pass. Government, UN, WHO, NASA, NOAA, Britannica, and Reuters/AP remain
+explicit configuration/licensing extension points.
 
 Latest implementation commit: `ccc19d0`, pushed to the configured GitHub
 remote. Python compilation and the React production build passed. The full

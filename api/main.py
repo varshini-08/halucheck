@@ -2,6 +2,7 @@
 from datetime import datetime, timezone
 from functools import lru_cache
 import os
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from time import perf_counter
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -13,6 +14,9 @@ from verification.verification_pipeline import VerificationPipeline
 from sources.registry import source_catalog
 from api.storage import load_all, save
 from sources.adapters import ADAPTERS
+from sources.routing import route_claim, deduplicate_evidence
+from services.retriever import FactRetrieval
+from services.vector_store import Evidence
 
 app = FastAPI(title="HaluCheck API", version="1.0.0")
 app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"], allow_methods=["*"], allow_headers=["*"])
@@ -44,6 +48,39 @@ def _serialize(result: AnalysisResult, question: str, provider: str, elapsed: fl
     neutral = sum(c["label"] == "NEUTRAL" for c in claims)
     payload = {"id": str(len(HISTORY) + 1), "question": question, "response": result.response, "claims": claims, "provider": provider, "model": _model(provider), "verification_engine": "DeBERTa-v3 MNLI", "timestamp": datetime.now(timezone.utc).isoformat(), "processing_time": elapsed, "retrieval_mode": result.comparison.get("retrieval_mode", "Unknown"), "evidence_sources": result.comparison.get("evidence_count", 0), "metrics": {"hallucination_score": sum(c["hallucination"] for c in claims) / len(result.facts) if result.facts else 0, "claims_analyzed": len(result.facts), "supported": supported, "contradicted": contradicted, "neutral": neutral}}
     return payload
+
+def _enrich_with_external_sources(result: AnalysisResult) -> AnalysisResult:
+    """Query routed adapters concurrently and re-use the existing NLI rules."""
+    jobs = []
+    for fact in result.facts:
+        claim = fact.fact_text
+        for source_id in route_claim(claim):
+            adapter = ADAPTERS.get(source_id)
+            if adapter and adapter.is_configured(): jobs.append((fact, source_id, adapter))
+    if not jobs: return result
+    grouped: dict[str, list[dict]] = {}
+    with ThreadPoolExecutor(max_workers=min(6, len(jobs))) as pool:
+        futures = {pool.submit(adapter.search, fact.fact_text): (fact, source_id) for fact, source_id, adapter in jobs}
+        for future in as_completed(futures):
+            fact, source_id = futures[future]
+            try:
+                for item in future.result()[:3]:
+                    if item.content:
+                        grouped.setdefault(fact.fact_text, []).append({"title": item.title, "content": item.content, "url": item.url, "source": source_id})
+            except Exception:
+                continue
+    if not grouped: return result
+    retrieval_map = {item.fact: item for item in result.retrievals}
+    enriched = []
+    for fact in result.facts:
+        existing = retrieval_map.get(fact.fact_text)
+        base = [{"title": x.title, "content": x.content, "url": x.url, "source": x.source} for x in (existing.retrieved_evidence if existing else [])]
+        merged = deduplicate_evidence(base + grouped.get(fact.fact_text, []))
+        evidence = [Evidence(x.get("title") or x.get("source", "Evidence"), x.get("content", ""), .5, i + 1, x.get("source", "external"), x.get("url")) for i, x in enumerate(merged)]
+        enriched.append(FactRetrieval(fact.fact_text, evidence, existing.used_wikipedia_fallback if existing else False, existing.local_average_similarity if existing else 0.0))
+    result.retrievals = enriched
+    result.verifications = result.comparison.get("verification_pipeline").verify_many(enriched) if result.comparison.get("verification_pipeline") else result.verifications
+    return result
 
 @app.get("/api/health")
 def health(): return {"status": "ok", "service": "HaluCheck API"}
@@ -90,6 +127,10 @@ def analyze(request: AnalyzeRequest):
         llm = GeminiProvider(key, _model(provider)) if provider == "gemini" else GroqProvider(key, _model(provider))
         started = perf_counter(); response = llm.generate_response(question)
         result = pipeline().analyse(response, question=question)
+        # Re-run the existing verifier over local plus routed external evidence.
+        result.comparison["verification_pipeline"] = pipeline().verification_pipeline
+        result = _enrich_with_external_sources(result)
+        result.comparison.pop("verification_pipeline", None)
         payload = _serialize(result, question, provider, perf_counter() - started); HISTORY.insert(0, payload); save(payload); return payload
     except (LLMServiceException, Exception) as exc:
         raise HTTPException(502, str(exc)) from exc
