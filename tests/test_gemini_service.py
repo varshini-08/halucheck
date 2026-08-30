@@ -26,9 +26,9 @@ def test_groq_provider_uses_requested_model_and_extracts_text():
     assert client_cls.call_args.kwargs["api_key"] == "test-key"
     fake_chat.completions.create.assert_called_once()
     assert fake_chat.completions.create.call_args.kwargs["model"] == "openai/gpt-oss-20b"
-    assert fake_chat.completions.create.call_args.kwargs["messages"] == [
-        {"role": "user", "content": "Who founded Apple?"}
-    ]
+    messages = fake_chat.completions.create.call_args.kwargs["messages"]
+    assert messages[-1] == {"role": "user", "content": "Who founded Apple?"}
+    assert messages[0]["role"] == "system"
 
 
 def test_groq_provider_reports_network_failure():
@@ -41,3 +41,28 @@ def test_groq_provider_reports_network_failure():
     with patch("services.llm_service.groq.Client", return_value=fake_client):
         with pytest.raises(LLMServiceException, match="offline"):
             GroqProvider("test-key").generate_response("Who founded Apple?")
+
+
+def test_groq_provider_uses_reasoning_when_content_is_omitted():
+    fake_choice = Mock()
+    fake_choice.message = Mock(content=None, reasoning="Paris is the capital of France.")
+    fake_completion = Mock(choices=[fake_choice])
+    fake_client = Mock()
+    fake_client.chat.completions.create.return_value = fake_completion
+
+    with patch("services.llm_service.groq.Client", return_value=fake_client):
+        assert GroqProvider("test-key").generate_response("Capital of France?") == "Paris is the capital of France."
+
+
+def test_groq_provider_reports_malformed_response_without_text():
+    fake_choice = Mock()
+    fake_choice.message = Mock(content=None, reasoning=None)
+    fake_client = Mock()
+    fake_client.chat.completions.create.return_value = Mock(choices=[fake_choice])
+
+    with patch("services.llm_service.groq.Client", return_value=fake_client):
+        with pytest.raises(LLMServiceException) as error:
+            GroqProvider("test-key").generate_response("Capital of France?")
+
+    assert error.value.error_type == "malformed_response"
+    assert error.value.status_code == 502

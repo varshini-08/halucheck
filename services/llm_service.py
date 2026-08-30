@@ -6,12 +6,17 @@ from typing import Any, Iterable, Optional
 import groq
 import httpx
 from utils.env_utils import load_environment
+from services.config import MAX_LLM_RESPONSE_TOKENS
 
 load_environment()
 
 
 class LLMServiceException(Exception):
     """Raised when Groq generation cannot complete."""
+    def __init__(self, message: str, error_type: str = "provider_error", status_code: int = 502) -> None:
+        super().__init__(message)
+        self.error_type = error_type
+        self.status_code = status_code
 
 
 class GroqProvider:
@@ -39,31 +44,55 @@ class GroqProvider:
 
         try:
             completion = self._client.chat.completions.create(
-                messages=[{"role": "user", "content": prompt}],
+                messages=[
+                    {
+                        "role": "system",
+                        "content": (
+                            "Answer the user's question directly and concisely. Return only the factual answer, "
+                            "in 2-6 sentences when possible. Never discuss the user, prompts, instructions, "
+                            "planning, hidden reasoning, or what an answer should contain."
+                        ),
+                    },
+                    {"role": "user", "content": prompt},
+                ],
                 model=self.model,
                 temperature=0.2,
-                max_completion_tokens=512,
+                max_completion_tokens=MAX_LLM_RESPONSE_TOKENS,
                 timeout=30,
             )
             return self._extract_text(completion)
         except groq.GroqError as exc:
-            raise LLMServiceException(str(exc)) from exc
+            code = getattr(exc, "status_code", None)
+            if code in (401, 403): kind = "authentication_error"
+            elif code == 404: kind = "model_error"
+            elif code == 429: kind = "rate_limit"
+            elif code is not None and code >= 500: kind = "provider_unavailable"
+            else: kind = "provider_error"
+            raise LLMServiceException(f"Groq {kind.replace('_', ' ')}: {exc}", kind, code or 502) from exc
+        except LLMServiceException:
+            raise
         except Exception as exc:
-            raise LLMServiceException(str(exc)) from exc
+            raise LLMServiceException(f"Groq network error: {exc}", "network_error", 503) from exc
 
     @staticmethod
     def _extract_text(completion: Any) -> str:
         if not getattr(completion, "choices", None):
-            raise LLMServiceException("Groq returned an unexpected response.")
+            raise LLMServiceException("Groq response missing choices.", "malformed_response", 502)
 
         first_choice = completion.choices[0]
         message = getattr(first_choice, "message", None)
-        if not message or not getattr(message, "content", None):
-            raise LLMServiceException("Groq returned an unexpected response.")
+        if not message:
+            raise LLMServiceException("Groq response missing message content.", "malformed_response", 502)
 
-        text = message.content.strip()
+        # Some reasoning-capable Groq models may return a reasoning field when
+        # the final content field is omitted. Preserve a usable provider
+        # response rather than misclassifying it as a transport failure.
+        raw_text = getattr(message, "content", None) or getattr(message, "reasoning", None)
+        if not raw_text:
+            raise LLMServiceException("Groq response missing message content.", "malformed_response", 502)
+        text = str(raw_text).strip()
         if not text:
-            raise LLMServiceException("Groq returned an empty response.")
+            raise LLMServiceException("Groq returned an empty response.", "empty_response", 502)
         return text
 
 

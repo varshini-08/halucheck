@@ -15,9 +15,11 @@ import spacy
 import spacy.cli
 
 from extraction.entity_detection import EntityDetector, load_spacy_model
+from services.config import MAX_CLAIMS
 
 CONJUNCTION_KEYWORDS = {"and", "but", "while", "whereas", "however"}
 DATE_LABELS = {"DATE", "TIME"}
+META_PREFIXES = ("the user asks", "the user wants", "they want", "provide ", "mention ", "explain ", "likely they mean", "the response should", "answer the question", "also mention")
 
 
 @dataclass
@@ -72,6 +74,8 @@ class AtomicFactExtractor:
                 clause_text = clause.strip()
                 if not clause_text:
                     continue
+                if self._is_meta_or_instruction(clause_text):
+                    continue
 
                 if self._is_duplicate_or_near_duplicate(
                     clause_text, [fact.fact_text for fact in atomic_facts]
@@ -107,6 +111,11 @@ class AtomicFactExtractor:
                 fact_counter += 1
 
         return atomic_facts
+
+    @staticmethod
+    def _is_meta_or_instruction(text: str) -> bool:
+        normalized = re.sub(r"^[\W_]+", "", text.strip().casefold())
+        return normalized.startswith(META_PREFIXES) or normalized.endswith("?")
 
     def _sentence_units(
         self,
@@ -429,6 +438,9 @@ class AtomicFactExtractor:
     @staticmethod
     def _normalize_text(text: str) -> str:
         cleaned = " ".join(text.strip().split())
+        # Repair duplicated possessives/terms introduced by dependency-span
+        # reconstruction (for example, “Kepler's Kepler's laws”).
+        cleaned = re.sub(r"\b([A-Za-z][A-Za-z'’-]*)\s+\1\b", r"\1", cleaned, flags=re.IGNORECASE)
         # spaCy token spans may space punctuation inside hyphenated modifiers.
         cleaned = re.sub(r"\s*-\s*", "-", cleaned)
         if cleaned and cleaned[-1] not in {".", "?", "!"}:

@@ -9,6 +9,7 @@ import os
 import traceback
 from time import perf_counter
 from typing import Any
+from services.config import NLI_BATCH_SIZE, NLI_MAX_LENGTH, NLI_DEVICE
 
 LOGGER = logging.getLogger(__name__)
 
@@ -89,10 +90,14 @@ class NLIVerifier:
         self.last_timings: dict[str, float] = {
             "nli_load_seconds": 0.0,
             "nli_inference_seconds": 0.0,
+            "nli_tokenization_seconds": 0.0,
         }
 
     def _resources(self) -> tuple[Any, Any]:
-        return _load_model(self.model_name, self.offline)
+        cached = _load_model.cache_info().currsize > 0
+        resources = _load_model(self.model_name, self.offline)
+        LOGGER.info("NLI model %s: %s", "reused from memory" if cached else "initialized", self.model_name)
+        return resources
 
     @staticmethod
     def _canonical_label(label: str) -> str:
@@ -112,7 +117,7 @@ class NLIVerifier:
         label = max(canonical_scores, key=canonical_scores.get)
         return NLIResult(label, canonical_scores[label], canonical_scores)
 
-    def verify_many(self, pairs: list[tuple[str, str]], batch_size: int = 16) -> list[NLIResult]:
+    def verify_many(self, pairs: list[tuple[str, str]], batch_size: int = NLI_BATCH_SIZE) -> list[NLIResult]:
         """Run independent NLI premise/hypothesis pairs in model batches."""
         if not pairs:
             return []
@@ -123,26 +128,36 @@ class NLIVerifier:
 
             load_started = perf_counter()
             tokenizer, model = self._resources()
+            if NLI_DEVICE == "cuda" and not torch.cuda.is_available():
+                LOGGER.warning("NLI_DEVICE=cuda requested but CUDA is unavailable; using CPU")
+            device = "cuda" if (NLI_DEVICE == "cuda" or (NLI_DEVICE == "auto" and torch.cuda.is_available())) else "cpu"
+            LOGGER.info("NLI device: %s", device.upper())
+            model.to(device)
             load_seconds = perf_counter() - load_started
             results: list[NLIResult] = []
             inference_started = perf_counter()
+            tokenization_seconds = 0.0
             for offset in range(0, len(pairs), batch_size):
                 batch = pairs[offset : offset + batch_size]
                 premises, hypotheses = zip(*batch)
+                tokenize_started = perf_counter()
                 inputs = tokenizer(
                     list(premises),
                     list(hypotheses),
                     return_tensors="pt",
                     padding=True,
                     truncation=True,
-                    max_length=512,
+                    max_length=NLI_MAX_LENGTH,
                 )
+                tokenization_seconds += perf_counter() - tokenize_started
+                inputs = {key: value.to(device) for key, value in inputs.items()}
                 with torch.inference_mode():
                     rows = torch.softmax(model(**inputs).logits, dim=-1).tolist()
                 results.extend(self._result_from_probabilities(row, model) for row in rows)
             self.last_timings = {
                 "nli_load_seconds": load_seconds,
                 "nli_inference_seconds": perf_counter() - inference_started,
+                "nli_tokenization_seconds": tokenization_seconds,
             }
             return results
         except NLIVerificationError:

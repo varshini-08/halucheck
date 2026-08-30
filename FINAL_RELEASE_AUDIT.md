@@ -50,3 +50,21 @@ python scripts/validate_gtr_index.py
 python -m pytest -q tests
 python -m streamlit run app.py
 ```
+
+## Final React/FastAPI audit (2026-08-30)
+
+| Check | Result |
+|---|---|
+| `.venv` imports | PASS (FastAPI 0.141.1, Uvicorn 0.51.0, FAISS available) |
+| Python compileall | PASS |
+| Regression tests | PASS (68 passed, 3 deprecation warnings) |
+| React/Vite build | PASS (Vite 8.2.2) |
+| API health/config/settings/history | PASS (HTTP 200) |
+| API sources/status/dashboard/docs | PASS (HTTP 200) |
+| Secret scan and ignore rules | PASS |
+| Browser click-through/screenshots | NOT TESTED; manual checklist remains required |
+| Real provider analysis this audit | NOT TESTED; avoid consuming quota |
+
+The working tree was clean before this report update. No code defect was found
+requiring a release change during the audit. External-source availability and
+limitations remain documented in `end_to_end_validation.md`.

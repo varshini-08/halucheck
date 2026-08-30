@@ -13,6 +13,7 @@ from verification.entity_matcher import EntityMatcher
 from verification.fact_classifier import FactClassification
 from verification.nli_verifier import NLIVerificationError
 from verification.verification_pipeline import VerificationPipeline
+from services.config import MAX_CLAIMS
 
 LOGGER = logging.getLogger(__name__)
 
@@ -52,7 +53,7 @@ class HaluCheckPipeline:
         if progress_callback:
             progress_callback("Extracting atomic facts...")
         extraction_started = perf_counter()
-        facts = self.extractor.extract_atomic_facts(response)
+        facts = self.extractor.extract_atomic_facts(response, max_facts=MAX_CLAIMS)
         extraction_seconds = perf_counter() - extraction_started
         LOGGER.info("Atomic fact extraction completed in %.3fs", extraction_seconds)
         if progress_callback:

@@ -46,7 +46,8 @@ def _serialize(result: AnalysisResult, question: str, provider: str, elapsed: fl
     supported = sum(c["label"] == "SUPPORTED" for c in claims)
     contradicted = sum(c["label"] == "CONTRADICTED" for c in claims)
     neutral = sum(c["label"] == "NEUTRAL" for c in claims)
-    payload = {"id": str(len(HISTORY) + 1), "question": question, "response": result.response, "claims": claims, "provider": provider, "model": _model(provider), "verification_engine": "DeBERTa-v3 MNLI", "timestamp": datetime.now(timezone.utc).isoformat(), "processing_time": elapsed, "retrieval_mode": result.comparison.get("retrieval_mode", "Unknown"), "evidence_sources": result.comparison.get("evidence_count", 0), "metrics": {"hallucination_score": sum(c["hallucination"] for c in claims) / len(result.facts) if result.facts else 0, "claims_analyzed": len(result.facts), "supported": supported, "contradicted": contradicted, "neutral": neutral}}
+    total = len(result.facts)
+    payload = {"id": str(len(HISTORY) + 1), "question": question, "response": result.response, "claims": claims, "provider": provider, "model": _model(provider), "verification_engine": "DeBERTa-v3 MNLI", "timestamp": datetime.now(timezone.utc).isoformat(), "processing_time": elapsed, "retrieval_mode": result.comparison.get("retrieval_mode", "Unknown"), "evidence_sources": result.comparison.get("evidence_count", 0), "metrics": {"hallucination_score": sum(c["hallucination"] for c in claims) / total if total else 0, "claims_analyzed": total, "supported": supported, "contradicted": contradicted, "neutral": neutral, "hallucination_rate": contradicted / total if total else 0, "support_rate": supported / total if total else 0, "neutral_rate": neutral / total if total else 0, "evidence_coverage": sum(bool(c["evidence"]) for c in claims) / total if total else 0}}
     return payload
 
 def _enrich_with_external_sources(result: AnalysisResult) -> AnalysisResult:
@@ -88,6 +89,14 @@ def health(): return {"status": "ok", "service": "HaluCheck API"}
 @app.get("/api/config")
 def config(): return {"providers": ["groq", "gemini"], "models": {"groq": _model("groq"), "gemini": _model("gemini")}}
 
+@app.get("/api/provider/status")
+def provider_status(provider: str = "groq"):
+    provider = provider.lower().strip()
+    if provider not in {"groq", "gemini"}:
+        raise HTTPException(400, "Unsupported provider.")
+    configured = bool(os.getenv("GEMINI_API_KEY" if provider == "gemini" else "GROQ_API_KEY", "").strip())
+    return {"provider": provider, "model": _model(provider), "status": "configured" if configured else "not_configured", "configured": configured}
+
 @app.get("/api/settings")
 def settings(): return config()
 
@@ -125,15 +134,20 @@ def analyze(request: AnalyzeRequest):
     if not key: raise HTTPException(503, f"{provider.title()} API key is not configured.")
     try:
         llm = GeminiProvider(key, _model(provider)) if provider == "gemini" else GroqProvider(key, _model(provider))
-        started = perf_counter(); response = llm.generate_response(question)
+        started = perf_counter(); llm_started = perf_counter(); response = llm.generate_response(question); llm_seconds = perf_counter() - llm_started
         result = pipeline().analyse(response, question=question)
         # Re-run the existing verifier over local plus routed external evidence.
         result.comparison["verification_pipeline"] = pipeline().verification_pipeline
         result = _enrich_with_external_sources(result)
         result.comparison.pop("verification_pipeline", None)
-        payload = _serialize(result, question, provider, perf_counter() - started); HISTORY.insert(0, payload); save(payload); return payload
-    except (LLMServiceException, Exception) as exc:
-        raise HTTPException(502, str(exc)) from exc
+        payload = _serialize(result, question, provider, perf_counter() - started)
+        payload["timing"] = {**result.comparison.get("timings", {}), "llm_seconds": llm_seconds}
+        storage_started = perf_counter(); HISTORY.insert(0, payload); save(payload); payload["timing"]["storage_seconds"] = perf_counter() - storage_started
+        return payload
+    except LLMServiceException as exc:
+        raise HTTPException(exc.status_code, {"provider": provider, "error_type": exc.error_type, "message": str(exc)}) from exc
+    except Exception as exc:
+        raise HTTPException(500, {"provider": provider, "error_type": "internal_error", "message": "Analysis failed. Check backend logs."}) from exc
 
 @app.post("/api/regenerate")
 def regenerate(request: AnalyzeRequest):

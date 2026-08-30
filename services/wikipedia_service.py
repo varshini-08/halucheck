@@ -14,6 +14,7 @@ import numpy as np
 import requests
 
 from services.vector_store import Evidence
+from services.config import EVIDENCE_RELEVANCE_THRESHOLD
 
 LOGGER = logging.getLogger(__name__)
 WIKIPEDIA_API = "https://en.wikipedia.org/w/api.php"
@@ -149,7 +150,7 @@ class WikipediaService:
         order = np.argsort(-scores)[:top_k]
         ranking_seconds = perf_counter() - started
         LOGGER.info("Wikipedia chunk ranking completed in %.3fs", ranking_seconds)
-        evidence = [Evidence(article.title, chunks[index], float(scores[index]), rank, "wikipedia", article.url) for rank, index in enumerate(order, 1)]
+        evidence = [Evidence(article.title, chunks[index], float(scores[index]), rank, "wikipedia", article.url) for rank, index in enumerate(order, 1) if float(scores[index]) >= EVIDENCE_RELEVANCE_THRESHOLD]
         self._ranking_cache[cache_key] = evidence
         self.last_timings = {
             "wikipedia_search_seconds": search_seconds,

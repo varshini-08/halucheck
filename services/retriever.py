@@ -170,9 +170,10 @@ class EvidenceRetriever:
         for item in facts:
             if isinstance(item, AtomicFact):
                 fact = item.fact_text
-                # A named entity is the most precise Wikipedia search key; retain
-                # the full fact for semantic chunk ranking and NLI.
-                query = next((str(entity.get("text", "")).strip() for entity in item.entities if entity.get("text")), fact)
+                # Search with the complete claim rather than an isolated entity.
+                # Entity-only queries can resolve to disambiguation pages (for
+                # example, “Newton”) and produce semantically irrelevant evidence.
+                query = fact
             else:
                 fact, query = item, item
             if fact and fact.strip():
