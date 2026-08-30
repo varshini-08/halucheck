@@ -4,6 +4,7 @@ HaluCheck is an explainable hallucination-detection project. It preserves an LLM
 The project is organized into four implementation phases: response analysis, evidence retrieval, fact verification, and HaluEval evaluation. Detailed architecture, paper alignment, evaluation instructions, and the final status are documented in [docs/architecture.md](docs/architecture.md), [docs/paper_methodology.md](docs/paper_methodology.md), [docs/evaluation.md](docs/evaluation.md), and [docs/final_project_status.md](docs/final_project_status.md).
 
 Additional release documentation: [ARCHITECTURE.md](ARCHITECTURE.md), [SOURCE_INTEGRATION.md](SOURCE_INTEGRATION.md), [VERIFICATION_METHODOLOGY.md](VERIFICATION_METHODOLOGY.md), [PERFORMANCE_BENCHMARK.md](PERFORMANCE_BENCHMARK.md), [TESTING.md](TESTING.md), [KNOWN_LIMITATIONS.md](KNOWN_LIMITATIONS.md), and [FINAL_PROJECT_STATUS.md](FINAL_PROJECT_STATUS.md).
+Demo materials: [DEMO_TEST_CASES.md](DEMO_TEST_CASES.md) and [DEMO_READINESS_SUMMARY.md](DEMO_READINESS_SUMMARY.md).
 ## Installation and configuration
 ```text
 pip install -r requirements.txt
